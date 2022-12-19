@@ -1,7 +1,7 @@
 # UDEMY
 Aqui adicionarei exercícios feitos dos cursos da UDEMY.
 
-curso_programacao : curso de JAVA do Professor Nélio Alvés - Java COMPLETO Programação Orientada a Objetos + Projetos:
+curso_programacao : curso de JAVA do Professor Nélio ÁlvEs - Java COMPLETO Programação Orientada a Objetos + Projetos:
 
 -Estrutura Sequencial:
 - Entrada de dados, quando o usuário informa dados ao computador. Exemplos básicos para entendimento de leitura de dados.
