@@ -11,7 +11,7 @@ public class exemplo_03_Math_abs {
 			double x = 3.0;
 			double y = 4.0;
 			double z = -5.0;
-			double A, B, C;
+			double A, B;
 			
 			A = Math.abs(x);
 			B = Math.abs(z);
