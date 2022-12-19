@@ -8,7 +8,7 @@ public class exemplo_06_scanner_quebra_de_linha {
 
 		// Entrada de dados = leitura de dados
 		// leitura de texto ou linha inteira até a quebra de linha(comando enter) usando o nextLine()
-		// o next() ler somente uma palavra
+		// o next() ler somente uma palavra 
 		
 		Scanner sc = new Scanner(System.in);
 		
