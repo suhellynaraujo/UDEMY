@@ -23,6 +23,8 @@ public class exerc_01_valoresInteiros {
 		
 		soma = num1 + num2;
 		System.out.println("A soma dos dois números é = " + soma);
+		
+		scan.close();
 
 
 	}
