@@ -14,7 +14,8 @@ curso_programacao : curso de JAVA do Professor Nélio ÁlvEs - Java COMPLETO Pro
 - abs =  a variável recebe o valor absoluto
 
 -Estrutura condicional:
- - Expressões comparativas: 
+
+_ Expressões comparativas: 
 - maior >
 - menor <
 -  maior ou igual >=
@@ -22,7 +23,7 @@ curso_programacao : curso de JAVA do Professor Nélio ÁlvEs - Java COMPLETO Pro
 -  igual ==
 -  diferente !=
 
-- Expressões Lógicas:
+_ Expressões Lógicas:
 - Condição && ( E ) = Todas as condições tem que ser VERDADEIRAS
 - Condição || ( OU ) = Pelo menos uma condição deve ser VERDADEIRA
 - Condição ! ( NÃO ) = Inverte a condição, se a expressão for verdadeira, passará a ser falsa e virce e versa.
