@@ -8,7 +8,7 @@ public class exemplo_01_operadoresLogicos {
 		// || ou
 		// ! não
 		
-		// Tabela Verdade
+		// Tabela Verdade .
 		
 		// condição E = Todas as condições tem que ser VERDADEIRAS
 		// condição OU = Pelo menos uma condição deve ser VERDADEIRA
