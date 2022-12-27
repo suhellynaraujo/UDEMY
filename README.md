@@ -15,8 +15,8 @@ curso_programacao : curso de JAVA do Professor Nélio ÁlvEs - Java COMPLETO Pro
 
 -Estrutura condicional:
 - Expressões comparativas 
-//  > maior
-//  < menor
+-> maior
+-< menor
 - >= maior ou igual
 - <= menor ou igual
 - == igual
