@@ -13,3 +13,12 @@ curso_programacao : curso de JAVA do Professor Nélio ÁlvEs - Java COMPLETO Pro
 - pow =  a variável recebe valor de uma variável elevada ao valor de outra variável
 - abs =  a variável recebe o valor absoluto
 
+-Estrutura condicional:
+ - Expressões comparativas: 
+- maior >
+- menor <
+-  maior ou igual >=
+-  menor ou igual <=
+-  igual ==
+-  diferente !=
+
