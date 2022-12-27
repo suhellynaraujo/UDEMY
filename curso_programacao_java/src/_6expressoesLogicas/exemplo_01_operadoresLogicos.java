@@ -12,7 +12,7 @@ public class exemplo_01_operadoresLogicos {
 		
 		// condição E = Todas as condições tem que ser VERDADEIRAS
 		// condição OU = Pelo menos uma condição deve ser VERDADEIRA
-		// condição NÃO =
+		// condição NÃO = Inverte a condição, se a expressão for verdadeira passará ser falsa e virce e versa
 	}
 
 }
