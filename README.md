@@ -14,4 +14,11 @@ curso_programacao : curso de JAVA do Professor Nélio ÁlvEs - Java COMPLETO Pro
 - abs =  a variável recebe o valor absoluto
 
 -Estrutura condicional:
+ - Expressões comparativas 
+  > maior
+  < menor
+	>= maior ou igual
+	<= menor ou igual
+	== igual
+	!= diferente
 
