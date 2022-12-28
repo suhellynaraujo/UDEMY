@@ -1,4 +1,4 @@
-package _9estruturaCondicionalEncadeamento;
+package _09estruturaCondicionalEncadeamento;
 
 import java.util.Scanner;
 
