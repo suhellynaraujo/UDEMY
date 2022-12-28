@@ -1,4 +1,4 @@
-package _3entradaDeDados;
+package _03entradaDeDados;
 
 import java.util.Scanner;
 
@@ -24,6 +24,7 @@ public class exemplo_05_scanner_varios {
 		System.out.println(y);
 		System.out.println(z);
 		
+		sc.close();
 
 	}
 

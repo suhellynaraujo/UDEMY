@@ -1,4 +1,4 @@
-package _3entradaDeDados;
+package _03entradaDeDados;
 
 import java.util.Scanner;
 
