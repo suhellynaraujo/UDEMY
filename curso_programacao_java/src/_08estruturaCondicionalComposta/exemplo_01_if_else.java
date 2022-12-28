@@ -1,4 +1,4 @@
-package _8estruturaCondicionalComposta;
+package _08estruturaCondicionalComposta;
 
 import java.util.Scanner;
 
