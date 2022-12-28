@@ -1,4 +1,4 @@
-package _6expressoesLogicas;
+package _06expressoesLogicas;
 
 public class exemplo_01_operadoresLogicos {
 
