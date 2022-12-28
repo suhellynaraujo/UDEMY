@@ -1,4 +1,4 @@
-package _2processamentoDeDados;
+package _02processamentoDeDados;
 
 public class exemplo_02_operadores_de_atribuicao_comulativa {
 
