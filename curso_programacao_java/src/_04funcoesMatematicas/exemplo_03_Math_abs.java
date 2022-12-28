@@ -1,4 +1,4 @@
-package _4funcoesMatematicas;
+package _04funcoesMatematicas;
 
 public class exemplo_03_Math_abs {
 
