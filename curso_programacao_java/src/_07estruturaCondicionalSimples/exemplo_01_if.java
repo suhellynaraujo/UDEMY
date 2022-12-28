@@ -1,4 +1,4 @@
-package _7estruturaCondicionalSimples;
+package _07estruturaCondicionalSimples;
 
 public class exemplo_01_if {
 
