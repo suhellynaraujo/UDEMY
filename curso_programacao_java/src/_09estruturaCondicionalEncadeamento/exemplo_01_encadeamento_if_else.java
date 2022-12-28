@@ -2,7 +2,7 @@ package _09estruturaCondicionalEncadeamento;
 
 import java.util.Scanner;
 
-public class exemplo_01_encadeamneto {
+public class exemplo_01_encadeamento_if_else {
 
 	public static void main(String[] args) {
 
