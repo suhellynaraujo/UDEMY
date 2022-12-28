@@ -1,4 +1,4 @@
-package _5expressoesComparativas;
+package _05expressoesComparativas;
 
 public class exemplo_01_operadoresComparativos {
 
