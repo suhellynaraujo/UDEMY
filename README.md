@@ -13,7 +13,7 @@ curso_programacao : curso de JAVA do Professor Nélio ÁlvEs - Java COMPLETO Pro
 - pow =  a variável recebe valor de uma variável elevada ao valor de outra variável
 - abs =  a variável recebe o valor absoluto
 
--Estrutura condicional:
+-Estrutura condicional =  estrutura de controle, que permite a definição e execução de blocos de comandos, com uma condição:
 
 _ Expressões comparativas: 
 - maior >
