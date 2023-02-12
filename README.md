@@ -28,3 +28,10 @@ _ Expressões Lógicas:
 - Condição || ( OU ) = Pelo menos uma condição deve ser VERDADEIRA
 - Condição ! ( NÃO ) = Inverte a condição, se a expressão for verdadeira, passará a ser falsa e virce e versa.
 
+_ Condicional Simples
+- if(){
+};
+_ Condicional Composta
+- if(){
+}else{};
+
