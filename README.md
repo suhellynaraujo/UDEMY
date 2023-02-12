@@ -60,3 +60,4 @@ _ Condição Ternária
 - (condição) ? valor_se_verdadeiro : valor_se_falso
 
 2 _ Estrutura de Controle
+- while = estrutura de controle que executa um bloco de código (comandos), enquanto uma condição for verdadeira. Usar quando não se sabe previamente a quantidade de repetições a serem executadas.
