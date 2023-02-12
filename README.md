@@ -55,3 +55,6 @@ _ Switch - Case
 - default: 
 - exemplo = "exemplo2";
 - break;}
+
+_ Condição Ternária
+- (condição) ? valor_se_verdadeiro : valor_se_falso
