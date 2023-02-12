@@ -47,4 +47,12 @@ _ Condição Comulativa
 - a /= b; a = a / b (a recebe a / b )
 - a %= b; a = a % b (a recebe a % b )
 
-
+_ Switch - Case
+- switch(){
+case 1:
+exemplo = 'exemplo';
+break;
+default: 
+exemplo = "exemplo2";
+break;
+}
