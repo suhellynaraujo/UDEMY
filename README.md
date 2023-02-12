@@ -40,4 +40,11 @@ _ Condição de encadeamento
 - else if = se não se
 - else = se não
 
+_ Condição Comulativa
+- a += b; a = a + b (a recebe a + b )
+-	a -= b; a = a - b (a recebe a - b )
+- a *= b; a = a * b (a recebe a * b )
+- a /= b; a = a / b (a recebe a / b )
+- a %= b; a = a % b (a recebe a % b )
+
 
