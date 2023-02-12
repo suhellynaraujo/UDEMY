@@ -49,10 +49,10 @@ _ Condição Comulativa
 
 _ Switch - Case
 - switch(){
-case 1:
-exemplo = 'exemplo';
-break;
-default: 
-exemplo = "exemplo2";
-break;
+- case 1:
+- exemplo = 'exemplo';
+- break;
+- default: 
+- exemplo = "exemplo2";
+- break;
 }
