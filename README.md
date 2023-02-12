@@ -29,9 +29,9 @@ _ Expressões Lógicas:
 - Condição ! ( NÃO ) = Inverte a condição, se a expressão for verdadeira, passará a ser falsa e virce e versa.
 
 _ Condicional Simples
-- if(){
-};
+- if()
+
 _ Condicional Composta
-- if(){
-}else{};
+- if
+- else
 
