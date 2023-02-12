@@ -35,3 +35,9 @@ _ Condicional Composta
 - if = se
 - else = se não
 
+_ Condição de encadeamento
+- if = se
+- else if = se não se
+- else = se não
+
+
