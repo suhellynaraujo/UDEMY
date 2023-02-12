@@ -36,9 +36,9 @@ _ Condicional Composta
 - else = se não
 
 _ Condição de encadeamento
-- if = se
-- else if = se não se
-- else = se não
+- if(){ = se
+- }else if(){ = se não se
+- }else {}= se não
 
 _ Condição Comulativa
 - a += b; a = a + b (a recebe a + b )
@@ -54,5 +54,4 @@ _ Switch - Case
 - break;
 - default: 
 - exemplo = "exemplo2";
-- break;
-}
+- break;}
