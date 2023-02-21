@@ -13,7 +13,7 @@ public class exemplo_08_indexOf {
 		int convertida = original.indexOf("bc");
 
 		System.out.println("Original: " + original);
-		System.out.println("replace: " + convertida);
+		System.out.println("indexOf: " + convertida);
 
 	}
 
