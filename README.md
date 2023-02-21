@@ -72,5 +72,9 @@ _ Condição Ternária
 - toUpperCase = converte tudo para maiúsculo.
 - trim = mantem a string original removendo os espaços do final.
 - subString = pega somente da posição declarada e monta uma nova string.
+- replace = troca a string de posição por seleção.
+- indexOf = primeira posição da ocorrência.
+- lastIndexOf = última posição da ocorrência
+- split =  função para recortar a string, criando um vetor, sendo assim colocando as partes da string em várias posições de acordo com a quantidade de valores na variável.
 
 		
