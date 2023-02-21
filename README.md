@@ -77,4 +77,22 @@ _ Condição Ternária
 - lastIndexOf = última posição da ocorrência
 - split =  função para recortar a string, criando um vetor, sendo assim colocando as partes da string em várias posições de acordo com a quantidade de valores na variável.
 
+4 _ Funções 
+
+- Representam um processamento que possui um significado.
+- Operações que pode ser reaproveitada várias vezes.
+- Recebe um argumento como parâmetro e retorna uma resposta.
+
+Vantagens:
+
+- Modulariazação: divide em vários módulos.
+- Delegação: lógica para execução em outro lugar.
+- Reaproveitameto: podendo ser utulizado várias vezes.
+- Podem receber dados de entrada (parâmetros ou argumentos) e saída
+(podendo ou não retornar uma saída)
+- Em POO funções em classes são os métodos.
+
+
+
+
 		
