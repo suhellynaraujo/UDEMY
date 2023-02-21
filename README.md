@@ -65,4 +65,12 @@ _ Condição Ternária
 - for = estrutura de controle que repete um bloco de código (comandos), para um certo intervalo de valores. Usar quando se sabe a quantidade repetições ou o intervalo de valores, podedo incrementar ou decrementar.
 
 - do while = estrutura de controle que executa o bloco de comandos executa pelo menos 1 vez,  pois a condiçõa é verificada no final,  primeiro executa o bloco, depois verifica passa pelo bloco, quando a condição for verdadeira,a estrutura volta e executa  novamente se a condição for falsa sai do bloco.
+
+3 _ Conversão de String
+
+- toLowerCase =  converte tudo para minúsculo.
+- toUpperCase = converte tudo para maiúsculo.
+- trim = mantem a string original removendo os espaços do final.
+- subString = pega somente da posição declarada e monta uma nova string.
+
 		
