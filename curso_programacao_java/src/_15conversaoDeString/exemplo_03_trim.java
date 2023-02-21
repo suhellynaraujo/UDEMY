@@ -9,7 +9,7 @@ public class exemplo_03_trim {
 		String convertida = original.trim();
 
 		System.out.println("Original: " + original);
-		System.out.println("toLowerCase: " + convertida);
+		System.out.println("trim: " + convertida);
 
 	}
 
