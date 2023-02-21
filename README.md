@@ -61,3 +61,8 @@ _ Condição Ternária
 
 2 _ Estrutura de Controle
 - while = estrutura de controle que executa um bloco de código (comandos), enquanto uma condição for verdadeira. Usar quando não se sabe previamente a quantidade de repetições a serem executadas.
+
+- for = estrutura de controle que repete um bloco de código (comandos), para um certo intervalo de valores. Usar quando se sabe a quantidade repetições ou o intervalo de valores, podedo incrementar ou decrementar.
+
+- do while = estrutura de controle que executa o bloco de comandos executa pelo menos 1 vez,  pois a condiçõa é verificada no final,  primeiro executa o bloco, depois verifica passa pelo bloco, quando a condição for verdadeira,a estrutura volta e executa  novamente se a condição for falsa sai do bloco.
+		
