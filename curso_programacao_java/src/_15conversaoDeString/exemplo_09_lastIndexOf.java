@@ -13,7 +13,7 @@ public class exemplo_09_lastIndexOf {
 		int convertida = original.lastIndexOf("bc");
 
 		System.out.println("Original: " + original);
-		System.out.println("replace: " + convertida);
+		System.out.println("lastIndexOf: " + convertida);
 
 	}
 
