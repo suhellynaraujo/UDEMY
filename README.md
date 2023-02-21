@@ -59,7 +59,7 @@ _ Switch - Case
 _ Condição Ternária
 - (condição) ? valor_se_verdadeiro : valor_se_falso
 
-2 _ Estrutura de Controle
+2 _ Estrutura de Controle de repetição
 - while = estrutura de controle que executa um bloco de código (comandos), enquanto uma condição for verdadeira. Usar quando não se sabe previamente a quantidade de repetições a serem executadas.
 
 - for = estrutura de controle que repete um bloco de código (comandos), para um certo intervalo de valores. Usar quando se sabe a quantidade repetições ou o intervalo de valores, podedo incrementar ou decrementar.
