@@ -119,6 +119,9 @@ Gerenciaodres
 - Memória Stack = estática
 - Memória Heap = dinâmica 
 
+6 _ Projeto de Classes UML = Diagrama de Classes
+
+- Representa classes, e relações entre elas
 
 
 
