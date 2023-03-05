@@ -92,7 +92,7 @@ curso_programacao : curso de JAVA do Professor Nélio ÁlvEs - Java COMPLETO Pro
 (podendo ou não retornar uma saída)
 - Em POO funções em classes são os métodos.
 
-4.2 Classes
+5 _ Classes
 
 - Tipo estruturado
 - Atributos(dados/campos)
@@ -110,6 +110,14 @@ Utilitários
 Views
 Repositórios
 Gerenciaodres
+
+5.1 _ Objeto
+
+- São as instâncias das classes
+
+5.2 Instanciação
+- Memória Stack = estática
+- Memória Heap = dinâmica 
 
 
 
