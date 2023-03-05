@@ -8,14 +8,14 @@ curso_programacao : curso de JAVA do Professor Nélio ÁlvEs - Java COMPLETO Pro
 - Processamento de dados, forma em que as variáveis recebem os valores. Exemplos básicos para entendimento de atribuição de dados.
 - Saída de dados, quando o computador informa dados ao usuário. Exemplos básicos para entendimento de escrita de dados.
 
-_ Expressão Matemática usando Math:
+1.1 _ Expressão Matemática usando Math:
 - sqrt = a variável recebe o valor da raiz quadrada
 - pow =  a variável recebe valor de uma variável elevada ao valor de outra variável
 - abs =  a variável recebe o valor absoluto
 
-_ Estrutura condicional =  estrutura de controle, que permite a definição e execução de blocos de comandos, com uma condição:
+1.2 _ Estrutura condicional =  estrutura de controle, que permite a definição e execução de blocos de comandos, com uma condição:
 
-_ Expressões comparativas: 
+1.3 _ Expressões comparativas: 
 - maior >
 - menor <
 -  maior ou igual >=
@@ -23,31 +23,31 @@ _ Expressões comparativas:
 -  igual ==
 -  diferente !=
 
-_ Expressões Lógicas:
+1.4 _ Expressões Lógicas:
 - Condição && ( E ) = Todas as condições tem que ser VERDADEIRAS
 - Condição || ( OU ) = Pelo menos uma condição deve ser VERDADEIRA
 - Condição ! ( NÃO ) = Inverte a condição, se a expressão for verdadeira, passará a ser falsa e virce e versa.
 
-_ Condicional Simples
+1.5 _ Condicional Simples
 - if(){} = se
 
-_ Condicional Composta
+1.6 _ Condicional Composta
 - if(){ = se
 - }else{} = se não
 
-_ Condição de encadeamento
+1.7 _ Condição de encadeamento
 - if(){ = se
 - }else if(){ = se não se
 - }else {}= se não
 
-_ Condição Comulativa
+1.8 _ Condição Comulativa
 - a += b; a = a + b (a recebe a + b )
 -	a -= b; a = a - b (a recebe a - b )
 - a *= b; a = a * b (a recebe a * b )
 - a /= b; a = a / b (a recebe a / b )
 - a %= b; a = a % b (a recebe a % b )
 
-_ Switch - Case
+1.9 _ Switch - Case
 - switch(){
 - case 1:
 - exemplo = 'exemplo';
@@ -56,7 +56,7 @@ _ Switch - Case
 - exemplo = "exemplo2";
 - break;}
 
-_ Condição Ternária
+1.10_ Condição Ternária
 - (condição) ? valor_se_verdadeiro : valor_se_falso
 
 2 _ Estrutura de Controle de repetição
@@ -83,7 +83,7 @@ _ Condição Ternária
 - Operações que pode ser reaproveitada várias vezes.
 - Recebe um argumento como parâmetro e retorna uma resposta.
 
-Vantagens:
+4.1 Vantagens:
 
 - Modulariazação: divide em vários módulos.
 - Delegação: lógica para execução em outro lugar.
@@ -91,6 +91,29 @@ Vantagens:
 - Podem receber dados de entrada (parâmetros ou argumentos) e saída
 (podendo ou não retornar uma saída)
 - Em POO funções em classes são os métodos.
+
+4.2 Classes
+
+- Tipo estruturado
+- Atributos(dados/campos)
+- Métodos(funções/operações)
+- Construtores
+- Sobrecarga
+- Encapsulamento
+- Herança
+- Polimorfismo
+
+Entidades
+Serviços
+Controladores
+Utilitários
+Views
+Repositórios
+Gerenciaodres
+
+
+
+
 
 
 
