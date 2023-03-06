@@ -111,9 +111,16 @@ Views
 Repositórios
 Gerenciaodres
 
+- Toda classe em java é uma subclasse da classe Object 
+
 5.1 _ Objeto
 
 - São as instâncias das classes
+
+- getClass =  retorna o tipo do objeto
+- equals = compara se o objero é igual a outro
+- hasCode = retorna um código has do objeto
+- toString - converte o objeto para String
 
 5.2 Instanciação
 - Memória Stack = estática
@@ -122,6 +129,8 @@ Gerenciaodres
 6 _ Projeto de Classes UML = Diagrama de Classes
 
 - Representa classes, e relações entre elas
+
+
 
 
 
