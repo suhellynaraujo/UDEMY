@@ -1,5 +1,5 @@
 # UDEMY
-Aqui adicionarei exemplos dos exercícios feitos dos cursos da UDEMY.
+Aqui adicionarei exemplos dos exercícios dos cursos da UDEMY.
 
 curso_programacao : curso de JAVA do Professor Nélio ÁlvEs - Java COMPLETO Programação Orientada a Objetos + Projetos:
 
