@@ -130,6 +130,12 @@ Gerenciaodres
 
 - Representa classes, e relações entre elas
 
+7 _ Membros estáticos
+
+- São conhecidos como membros de classes
+- public static final = não pode mudar (uma constante), (para declarar nomes inal, sempre ser com letras maiusculas)
+- padrão de nomeclatura para consatantes = tudo maiusculas com um _ para separar as palavras, exemplo: NET_SALARY.
+- Ao ser declarado, um método statico (ou uma constante), não precisa de um objeto para ser chamado em outra classe, sendo assim apenas chamamos a propria classe.método desejado, passando os parametros.
 
 
 
