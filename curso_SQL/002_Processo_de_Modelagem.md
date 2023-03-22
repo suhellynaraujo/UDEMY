@@ -4,6 +4,7 @@
 
 Modelagem Conceitual - Rascunho 
 Modelagem Lógica - Qualque programa de modelagem
+Modelagem Física - Script gerado a partir de uma modelagem lógica
 
 /* Fase 03 feito pelo DBA(ADMINISTRADOR DE BANCO DE DADOS) ou AD (ADMINISTRADOR DE DADOS) */
 Modelagem Física - scripts de banco
