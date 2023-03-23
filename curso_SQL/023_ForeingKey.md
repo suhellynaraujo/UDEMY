@@ -1,0 +1,49 @@
+
+CREATE DATABASE COMERCIO;
+
+USE COMERCIO;
+
+SHOW DATABASES;
+
+CREATE TABLE CLIENTE(
+	IDCLIENTE INT PRIMARY KEY AUTO_INCREMENT, -- id sempre será um identificador e auto incremente, sempre será adicionado automaticamente pelo banco
+	NOME VARCHAR (30) NOT NULL, -- NOT NULL é o campo que não poderá ser nulo
+	SEXO ENUM ('M', 'F') NOT NULL, -- enum é um enumerado de tipos
+	EMAIL VARCHAR (50) UNIQUE,  -- Unique sempre será o dado que não se repetirá
+	CFP VARCHAR (15) UNIQUE
+);
+
+CREATE TABLE ENDERECO(
+	IDENDERECO INT PRIMARY KEY AUTO_INCREMENT,
+	RUA VARCHAR(30) NOT NULL,
+	BAIRRO VARCHAR(30) NOT NULL,
+	CIDADE VARCHAR(30) NOT NULL,
+	ESTADO CHAR(2) NOT NULL,
+	ID_CLIENTE INT UNIQUE, -- PARA SE REFERENCIAR UMA CHAVE ESTRANGEIRA DEVE SE USAR O MESMO TIPO DO ID DA TABELA PRINCIPAL
+	FOREIGN KEY (ID_CLIENTE) -- ADICIONAR A CLAUSULA UNIQUE EM TABELAS COM CARDINALIDAD E (1,1)
+	REFERENCES CLIENTE(IDCLIENTE) -- CHAVE ESTRANGEIRA ID_CLIENTE, REFERENCIA DA TABELA CLIENTE, DO CAMPO CHAVE PRIMARIA IDCLIENTE
+);
+
+
+CREATE TABLE TELEFONE(
+	IDTELEFONE INT PRIMARY KEY AUTO_INCREMENT,	
+	TIPO ENUM('RES', 'COM', 'CEL') NOT NULL,
+	NUMERO VARCHAR(10) NOT NULL,
+	ID_CLIENTE INT, -- PARA SE REFERENCIAR UMA CHAVE ESTRANGEIRA DEVE SE USAR O MESMO TIPO DO ID DA TABELA PRINCIPAL
+	FOREIGN KEY (ID_CLIENTE)
+	REFERENCES CLIENTE(IDCLIENTE) -- CHAVE ESTRANGEIRA ID_CLIENTE, REFERENCIADA DA TABELA CLIENTE, DO CAMPO CHAVE PRIMARIA IDCLIENTE
+);
+
+/* endereco - obrigatorio
+cadastro de somente um,
+
+telefone - não obrigatório
+cadastro de mais de um (opcional) */
+
+/*FOREIGN key depende da cardinalidade para ser direcionado a ser uma chave estrangeira em uma tabela
+
+Regra de negócio*/
+
+/*
+Em relacionamento (1,1) a chave estrangeira fica na tabela mais fraca, a que a é não principal,
+Em relacionamento (1,N) a chave estrangeira ficará na tabela de cardinalidade N, */
