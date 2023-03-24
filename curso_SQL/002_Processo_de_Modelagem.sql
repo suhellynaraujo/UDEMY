@@ -15,6 +15,6 @@ Modelagem Física - scripts de banco
 
 CREATE DATABASE PROJETO;
 
-/* CONECTYANDO AO BANCO */
+/* CONECTANDO AO BANCO */
 
 USE PROJETO;
