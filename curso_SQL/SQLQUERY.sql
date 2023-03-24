@@ -52,10 +52,27 @@ CREATE TABLE CLIENTE (
 
 SHOW TABLES;
 
++-------------------+
+| Tables_in_projeto |
++-------------------+
+| cliente           |
+| livros            |
++-------------------+
+
 /* DESCOBRINDO ESTRUTURA DE TABELA */
 
 DESC CLIENTE;
 
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| NOME     | varchar(30)  | YES  |     | NULL    |       |
+| CPF      | int(11)      | YES  |     | NULL    |       |
+| EMAIL    | varchar(30)  | YES  |     | NULL    |       |
+| TELEFONE | varchar(30)  | YES  |     | NULL    |       |
+| ENDERECO | varchar(100) | YES  |     | NULL    |       |
+| SEXO     | char(1)      | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
 /* SINTAXE BÁSICA PARA INSERÇÃO */
 /* FORMA 01 - OMITINDO AS COLUNAS */
 
@@ -75,22 +92,69 @@ SELEÇÃO = WHERE
 */
 
 SELECT NOW();
++---------------------+
+| NOW()               |
++---------------------+
+| 2023-03-23 20:20:15 |
++---------------------+
 
 SELECT NOW() AS DATA_HORA;
++---------------------+
+| DATA_HORA           |
++---------------------+
+| 2023-03-23 20:21:11 |
++---------------------+
 
 SELECT NOW() AS DATA_HORA, "SUHELLYN" AS ALUNA;
++---------------------+----------+
+| DATA_HORA           | ALUNA    |
++---------------------+----------+
+| 2023-03-23 20:21:22 | SUHELLYN |
++---------------------+----------+
 
 /* ALIAS DE COLUNAS */
 
 SELECT NOME, SEXO, EMAIL FROM CLIENTE;
++--------+------+-------------------+
+| NOME   | SEXO | EMAIL             |
++--------+------+-------------------+
+| JOAO   | M    | JOAO@GMAIL.COM    |
+| CELIA  | F    | CELIA@GMAIL.COM   |
+| MARCOS | F    | MARCOS@GMAIL.COM  |
+| CARLA  | F    | C.LOPES@GMAIL.COM |
++--------+------+-------------------+
 
 SELECT NOME AS CLIENTE, SEXO, EMAIL FROM CLIENTE;
++---------+------+-------------------+
+| CLIENTE | SEXO | EMAIL             |
++---------+------+-------------------+
+| JOAO    | M    | JOAO@GMAIL.COM    |
+| CELIA   | F    | CELIA@GMAIL.COM   |
+| MARCOS  | F    | MARCOS@GMAIL.COM  |
+| CARLA   | F    | C.LOPES@GMAIL.COM |
++---------+------+-------------------+
 
 SELECT NOME, SEXO, EMAIL, ENDERECO FROM CLIENTE;
++--------+------+-------------------+----------------------------------------------+
+| NOME   | SEXO | EMAIL             | ENDERECO                                     |
++--------+------+-------------------+----------------------------------------------+
+| JOAO   | M    | JOAO@GMAIL.COM    | MAIA LACERDA - ESTACIO - RIO DE JANEIRO - RJ |
+| CELIA  | F    | CELIA@GMAIL.COM   | RIACHUELO - RIO DE JANEIRO - RJ              |
+| MARCOS | F    | MARCOS@GMAIL.COM  | RUA COPER LEAF - WILLIANSBURG - KITCHENER    |
+| CARLA  | F    | C.LOPES@GMAIL.COM | RUA COPER LEAF - WILLIANSBURG - KITCHENER    |
++--------+------+-------------------+----------------------------------------------+
 
 /*SABENDO A HORA QUE A QUERY FOI CRIADA*/
 
 SELECT NOME, SEXO, EMAIL, ENDERECO, NOW() AS DATA_HORA FROM CLIENTE;
++--------+------+-------------------+----------------------------------------------+---------------------+
+| NOME   | SEXO | EMAIL             | ENDERECO                                     | DATA_HORA           |
++--------+------+-------------------+----------------------------------------------+---------------------+
+| JOAO   | M    | JOAO@GMAIL.COM    | MAIA LACERDA - ESTACIO - RIO DE JANEIRO - RJ | 2023-03-23 20:22:25 |
+| CELIA  | F    | CELIA@GMAIL.COM   | RIACHUELO - RIO DE JANEIRO - RJ              | 2023-03-23 20:22:25 |
+| MARCOS | F    | MARCOS@GMAIL.COM  | RUA COPER LEAF - WILLIANSBURG - KITCHENER    | 2023-03-23 20:22:25 |
+| CARLA  | F    | C.LOPES@GMAIL.COM | RUA COPER LEAF - WILLIANSBURG - KITCHENER    | 2023-03-23 20:22:25 |
++--------+------+-------------------+----------------------------------------------+---------------------+
 
 /* FILTRANDO DADOS COM WHERE E LIKE */
 /* WHERE = ONDE
@@ -103,28 +167,77 @@ SELEÇÃO = WHERE
 
 SELECT NOME, SEXO FROM CLIENTE
 WHERE SEXO = 'M';
++------+------+
+| NOME | SEXO |
++------+------+
+| JOAO | M    |
++------+------+
 
 SELECT NOME, ENDERECO FROM CLIENTE
 WHERE SEXO = 'F';
++--------+-------------------------------------------+
+| NOME   | ENDERECO                                  |
++--------+-------------------------------------------+
+| CELIA  | RIACHUELO - RIO DE JANEIRO - RJ           |
+| MARCOS | RUA COPER LEAF - WILLIANSBURG - KITCHENER |
+| CARLA  | RUA COPER LEAF - WILLIANSBURG - KITCHENER |
++--------+-------------------------------------------+
 
 SELECT NOME, SEXO FROM CLIENTE
 WHERE ENDERECO = 'RJ'; /*EMPTY SET = VAZIO */
+Empty set (0.00 sec)
 
 SELECT NOME, SEXO FROM CLIENTE
 WHERE ENDERECO LIKE 'RJ'; /* CARACTER CURINGA % = QUALQUER COISA */
 
 SELECT NOME, SEXO FROM CLIENTE
 WHERE ENDERECO LIKE '%RJ'; /* QUALQUER COISA ANTES DO RJ*/
++-------+------+
+| NOME  | SEXO |
++-------+------+
+| JOAO  | M    |
+| CELIA | F    |
++-------+------+
 
 SELECT NOME, SEXO, ENDERECO FROM CLIENTE
 WHERE ENDERECO LIKE '%RJ';
++-------+------+----------------------------------------------+
+| NOME  | SEXO | ENDERECO                                     |
++-------+------+----------------------------------------------+
+| JOAO  | M    | MAIA LACERDA - ESTACIO - RIO DE JANEIRO - RJ |
+| CELIA | F    | RIACHUELO - RIO DE JANEIRO - RJ              |
++-------+------+----------------------------------------------+
 
 SELECT NOME, SEXO, ENDERECO FROM CLIENTE
 WHERE ENDERECO LIKE 'ESTACIO%'; /* NOME PREIMEIRO DEPOIS QUALQUER COISA */
 
 SELECT NOME, SEXO, ENDERECO FROM CLIENTE
 WHERE ENDERECO LIKE '%ESTACIO%'; /* COMEÇA COM QUALQUER COISA , NOME QUE PREOCURO, DEPOIS TERMINA COM QUALQUER COISA */ 
++------+------+----------------------------------------------+
+| NOME | SEXO | ENDERECO                                     |
++------+------+----------------------------------------------+
+| JOAO | M    | MAIA LACERDA - ESTACIO - RIO DE JANEIRO - RJ |
++------+------+----------------------------------------------+
 
+SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| comercio           |
+| exercicio          |
+| livraria           |
+| mysql              |
+| performance_schema |
+| projeto            |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+
+CREATE DATABASE LIVRARIA;
+
+USE LIVRARIA;
 
 CREATE TABLE LIVROS (
 	NOME_LIVRO VARCHAR(100),
@@ -136,6 +249,20 @@ CREATE TABLE LIVROS (
 	UF_EDITORA CHAR(2),
 	ANO_PUBLICACAO INT(4)
 );
+
+DESC LIVROS;
++----------------+--------------+------+-----+---------+-------+
+| Field          | Type         | Null | Key | Default | Extra |
++----------------+--------------+------+-----+---------+-------+
+| NOME_LIVRO     | varchar(100) | YES  |     | NULL    |       |
+| NOME_AUTOR     | varchar(100) | YES  |     | NULL    |       |
+| SEXO_AUTOR     | char(1)      | YES  |     | NULL    |       |
+| NUMERO_PAGINAS | int(5)       | YES  |     | NULL    |       |
+| NOME_EDITORA   | varchar(30)  | YES  |     | NULL    |       |
+| VALOR_LIVRO    | float(10,2)  | YES  |     | NULL    |       |
+| UF_EDITORA     | char(2)      | YES  |     | NULL    |       |
+| ANO_PUBLICACAO | int(4)       | YES  |     | NULL    |       |
++----------------+--------------+------+-----+---------+-------+
 
 /* STATUS MOSTRA EM QUAL DATABASE ESTÁ*/
 
@@ -163,10 +290,34 @@ INSERT INTO LIVROS VALUES('O poder da mente' , 'Clara Mafra', 'F', 120 , 'CONTIN
 
 SELECT * FROM LIVROS;
 
++---------------------+-------------------+------------+----------------+--------------+-------------+------------+----------------+
+| NOME_LIVRO          | NOME_AUTOR        | SEXO_AUTOR | NUMERO_PAGINAS | NOME_EDITORA | VALOR_LIVRO | UF_EDITORA | ANO_PUBLICACAO |
++---------------------+-------------------+------------+----------------+--------------+-------------+------------+----------------+
+| CAVALEIRO REAL      | ANA CLAUDIA       | F          |            465 | ATLAS        |       49.90 | RJ         |           2009 |
+| SQL PARA LEIGOS     | JOÃO NUNES        | M          |            450 | ADDISON      |       98.00 | SP         |           2018 |
+| Receitas Caseiras   | Celia Tavares     | F          |            210 | ATLAS        |       45.00 | RJ         |           2008 |
+| Pessoas Efetivas    | Eduardo Santos    | M          |            390 | BETA         |       78.99 | RJ         |           2018 |
+| Estacio Querido     | Geraldo Francisco | M          |            310 | INSIGNIA     |      100.00 | ES         |           2015 |
+| Pra sempre amigas   | Leda Silva        | F          |            510 | INSIGNIA     |       78.98 | ES         |           2011 |
+| Copas Inesqueciveis | Marco Alcantara   | M          |            200 | LARSON       |      130.98 | RS         |           2018 |
+| O poder da mente    | Clara Mafra       | F          |            120 | CONTINENTAL  |       56.58 | SP         |           2017 |
++---------------------+-------------------+------------+----------------+--------------+-------------+------------+----------------+
 /* TRAZER O NOME DO LIVRO E O NOME DA EDITORA */ /* TRABALHANDO COM SELEÇÃO = WHERE */
 
 SELECT NOME_LIVRO, NOME_EDITORA
 FROM LIVROS;
++---------------------+--------------+
+| NOME_LIVRO          | NOME_EDITORA |
++---------------------+--------------+
+| CAVALEIRO REAL      | ATLAS        |
+| SQL PARA LEIGOS     | ADDISON      |
+| Receitas Caseiras   | ATLAS        |
+| Pessoas Efetivas    | BETA         |
+| Estacio Querido     | INSIGNIA     |
+| Pra sempre amigas   | INSIGNIA     |
+| Copas Inesqueciveis | LARSON       |
+| O poder da mente    | CONTINENTAL  |
++---------------------+--------------+
 
 /* TRAZER O NOME DO LIVRO E A UF DOS LIVROS PUBLICADOS POR AUTORES MASCULINOS */
 /* TRAZER O NOME DO LIVRO E A UF DOS LIVROS = PROJEÇÃO */
@@ -176,11 +327,29 @@ SELECT NOME_LIVRO, UF_EDITORA
 FROM LIVROS
 WHERE SEXO_AUTOR = 'M';
 
++---------------------+------------+
+| NOME_LIVRO          | UF_EDITORA |
++---------------------+------------+
+| SQL PARA LEIGOS     | SP         |
+| Pessoas Efetivas    | RJ         |
+| Estacio Querido     | ES         |
+| Copas Inesqueciveis | RS         |
++---------------------+------------+
+
 /* CONFERINDO */
 
 SELECT NOME_AUTOR, NOME_LIVRO, UF_EDITORA
 FROM LIVROS
 WHERE SEXO_AUTOR = 'M';
+
++-------------------+---------------------+------------+
+| NOME_AUTOR        | NOME_LIVRO          | UF_EDITORA |
++-------------------+---------------------+------------+
+| JOÃO NUNES        | SQL PARA LEIGOS     | SP         |
+| Eduardo Santos    | Pessoas Efetivas    | RJ         |
+| Geraldo Francisco | Estacio Querido     | ES         |
+| Marco Alcantara   | Copas Inesqueciveis | RS         |
++-------------------+---------------------+------------+
 
 /* TRAZER O NOME DO LIVRO E O NÚMERO DE PÁGINAS DOS LIVROS PUBLICADOS POR AUTORES FEMININOS */
 /* TRAZER O NOME DO LIVRO E O NÚMERO DE PÁGINAS DOS LIVROS  = PROJEÇÃO */
@@ -189,12 +358,27 @@ WHERE SEXO_AUTOR = 'M';
 SELECT NOME_LIVRO, NUMERO_PAGINAS
 FROM LIVROS
 WHERE SEXO_AUTOR = 'F';
-
++--------------------+----------------+
+| NOME_LIVRO         | NUMERO_PAGINAS |
++--------------------+----------------+
+| CAVALEIRO REAL     |            465 |
+| Receitas Caseiras  |            210 |
+| Pra sempre amigas  |            510 |
+| O poder da mente   |            120 |
++--------------------+----------------+
 /* CONFERINDO */
 
 SELECT NOME_AUTOR, NOME_LIVRO, NUMERO_PAGINAS
 FROM LIVROS
 WHERE SEXO_AUTOR = 'F';
++---------------+--------------------+----------------+
+| NOME_AUTOR    | NOME_LIVRO         | NUMERO_PAGINAS |
++---------------+--------------------+----------------+
+| ANA CLAUDIA   | CAVALEIRO REAL     |            465 |
+| Celia Tavares | Receitas Caseiras  |            210 |
+| Leda Silva    | Pra sempre amigas  |            510 |
+| Clara Mafra   | O poder da mente   |            120 |
++---------------+--------------------+----------------+
 
 /* TRAZER NOME E OS VALORES DOS LIVROS DAS EDITORAS DE SP */
 
@@ -202,11 +386,24 @@ SELECT NOME_LIVRO, VALOR_LIVRO
 FROM LIVROS
 WHERE UF_EDITORA = 'SP';
 
++------------------+-------------+
+| NOME_LIVRO       | VALOR_LIVRO |
++------------------+-------------+
+| SQL PARA LEIGOS  |       98.00 |
+| O poder da mente |       56.58 |
++------------------+-------------+
+
 /* CONFERINDO */
 
 SELECT UF_EDITORA, NOME_LIVRO, VALOR_LIVRO
 FROM LIVROS
 WHERE UF_EDITORA = 'SP';
++------------+------------------+-------------+
+| UF_EDITORA | NOME_LIVRO       | VALOR_LIVRO |
++------------+------------------+-------------+
+| SP         | SQL PARA LEIGOS  |       98.00 |
+| SP         | O poder da mente |       56.58 |
++------------+------------------+-------------+
 
 
 /* TRAZER OS DADOS DOS AUTORES DO SEXO MASCULINO QUE TIVERAM LIVROS PUBLICADOS EM SP OU RJ */
@@ -217,16 +414,36 @@ WHERE SEXO_AUTOR = 'M'
 AND UF_EDITORA = 'SP'
 OR UF_EDITORA = 'RJ';
 
-SELECT AUTOR, SEXO, UF
++----------------+------------+
+| NOME_AUTOR     | SEXO_AUTOR |
++----------------+------------+
+| ANA CLAUDIA    | F          |
+| JOÃO NUNES     | M          |
+| Celia Tavares  | F          |
+| Eduardo Santos | M          |
++----------------+------------+
+
+SELECT NOME_AUTOR, SEXO_AUTOR, UF_EDITORA 
 FROM LIVROS
 WHERE 
-SEXO = 'M' AND (UF = 'SP' OR UF = 'RJ');
+SEXO_AUTOR = 'M' AND (UF_EDITORA  = 'SP' OR UF_EDITORA  = 'RJ');
++----------------+------------+------------+
+| NOME_AUTOR     | SEXO_AUTOR | UF_EDITORA |
++----------------+------------+------------+
+| JOÃO NUNES     | M          | SP         |
+| Eduardo Santos | M          | RJ         |
++----------------+------------+------------+
 
-SELECT AUTOR, SEXO, UF
+SELECT NOME_AUTOR, SEXO_AUTOR, UF_EDITORA 
 FROM LIVROS
-WHERE SEXO = 'M'
-AND UF = 'SP'
-AND paginas > 100;
+WHERE SEXO_AUTOR = 'M'
+AND UF_EDITORA  = 'SP'
+AND NUMERO_PAGINAS > 100;
++------------+------------+------------+
+| NOME_AUTOR | SEXO_AUTOR | UF_EDITORA |
++------------+------------+------------+
+| JOÃO NUNES | M          | SP         |
++------------+------------+------------+
 
 /* Operadores lógicos 
 OR => PARA QUE A SAÍDA DA QUERY SEJA VERDADEIRA, BASTA QUE APENAS UMA CONDIÇÃO SEJA VERDADEIRA
@@ -240,28 +457,60 @@ SHOW DATABASE;
 USE PROJETO;
 
 SELECT * FROM CLIENTE;
++--------+-----------+-------------------+-----------+----------------------------------------------+------+
+| NOME   | CPF       | EMAIL             | TELEFONE  | ENDERECO                                     | SEXO |
++--------+-----------+-------------------+-----------+----------------------------------------------+------+
+| JOAO   | 333333333 | JOAO@GMAIL.COM    | 123456789 | MAIA LACERDA - ESTACIO - RIO DE JANEIRO - RJ | M    |
+| CELIA  | 222222222 | CELIA@GMAIL.COM   | 234567891 | RIACHUELO - RIO DE JANEIRO - RJ              | F    |
+| MARCOS | 456388549 | MARCOS@GMAIL.COM  | 4575-0048 | RUA COPER LEAF - WILLIANSBURG - KITCHENER    | F    |
+| CARLA  | 456388549 | C.LOPES@GMAIL.COM | 4575-0048 | RUA COPER LEAF - WILLIANSBURG - KITCHENER    | F    |
++--------+-----------+-------------------+-----------+----------------------------------------------+------+
 
 SELECT NOME, SEXO, ENDERECO FROM CLIENTE
 WHERE
 SEXO = 'M' OR ENDERECO LIKE '%RJ';
++-------+------+----------------------------------------------+
+| NOME  | SEXO | ENDERECO                                     |
++-------+------+----------------------------------------------+
+| JOAO  | M    | MAIA LACERDA - ESTACIO - RIO DE JANEIRO - RJ |
+| CELIA | F    | RIACHUELO - RIO DE JANEIRO - RJ              |
++-------+------+----------------------------------------------+
 
 SELECT NOME, SEXO, ENDERECO FROM CLIENTE
 WHERE
 SEXO = 'M' AND ENDERECO LIKE '%RJ';
++------+------+----------------------------------------------+
+| NOME | SEXO | ENDERECO                                     |
++------+------+----------------------------------------------+
+| JOAO | M    | MAIA LACERDA - ESTACIO - RIO DE JANEIRO - RJ |
++------+------+----------------------------------------------+
 
 SELECT NOME, SEXO, ENDERECO FROM CLIENTE
 WHERE
 SEXO = 'F' OR ENDERECO LIKE '%ESTACIO';
++--------+------+-------------------------------------------+
+| NOME   | SEXO | ENDERECO                                  |
++--------+------+-------------------------------------------+
+| CELIA  | F    | RIACHUELO - RIO DE JANEIRO - RJ           |
+| MARCOS | F    | RUA COPER LEAF - WILLIANSBURG - KITCHENER |
+| CARLA  | F    | RUA COPER LEAF - WILLIANSBURG - KITCHENER |
++--------+------+-------------------------------------------+
 
 /* AND = E */
 
 SELECT NOME, SEXO, ENDERECO FROM CLIENTE
 WHERE
 SEXO = 'M' AND ENDERECO LIKE '%RJ';
++------+------+----------------------------------------------+
+| NOME | SEXO | ENDERECO                                     |
++------+------+----------------------------------------------+
+| JOAO | M    | MAIA LACERDA - ESTACIO - RIO DE JANEIRO - RJ |
++------+------+----------------------------------------------+
 
 SELECT NOME, SEXO, ENDERECO FROM CLIENTE
 WHERE
 SEXO = 'F' AND ENDERECO LIKE '%ESTACIO';
+Empty set (0.00 sec)
 
 /* COUNT(*)  */
 
@@ -296,66 +545,6 @@ AND = PARA ESSA CHECAGEM AS 2 TEM QUE SER VERDADEIRAS, SENDO ASSIM COLOCAR A PRI
 
 */
 
-
-/* exercicio */
-
-/* Considerando o que vc aprendeu sobre performance, resolva os exercicios abaixo */
-
-SELECT COUNT(*) FROM FUNCIONARIOS;
-
---Traga os funcionarios que trabalhem
---no departamento de filmes OU no
---departamento de roupas
-
--- 21 | Filmes   53 | Roupas
-
---Como estamos trabalhando com OR e a segunda condicao é opcional
---colocamos na primeira condicao quem tem mais chances de uma saida
---verdadeira, pois a segunda condicao nao será checada nesse caso.
-
-select * from funcionarios
-where departamento = 'Roupas'
-or
-departamento = 'Filmes';
-
-SELECT COUNT(*), departamento
-FROM FUNCIONARIOS
-group by departamento;
-
-SELECT COUNT(*), departamento
-FROM FUNCIONARIOS
-group by departamento
-order by 1;
-
-WHERE DEPARTAMENTO = 'Filmes' OR DEPARTAMENTO = 'Roupas'
-
---O gestor de marketing pediu a lista das funcionarias (AS) = FEMININO que trabalhem no departamento 
---de filmes ou no departamento lar. Ele necessita enviar um email para as colaboradoras
---desses dois setores. OR +  AND *
-
---Feminino 491 ocorrencias
-select count(*), sexo
-from funcionarios
-group by sexo;
-
---52 | Lar  21 Filmes
-select count(*), departamento
-from funcionarios
-group by departamento;
-
-SELECT * FROM FUNCIONARIOS
-WHERE
-( DEPARTAMENTO = 'Lar' AND SEXO = 'Feminino' )
-OR
-( DEPARTAMENTO = 'Filmes' AND SEXO = 'Feminino' );
-
---Traga os funcionarios do sexo masculino
---ou os funcionarios que trabalhem no setor Jardim
-
-SELECT * FROM FUNCIONARIOS
-WHERE
-SEXO = 'Masculino' OR
-DEPARTAMENTO = 'Jardim';
 
 create database exercicio;
 
@@ -1374,16 +1563,302 @@ insert into funcionarios values (999,'Kennedy','lkennedyrq@edublogs.org','Mascul
 insert into funcionarios values (1000,'Howard','showardrr@addtoany.com','Masculino','Bebês','11/7/2003',148687,'General Manager',3);
 
 
+/* exercicio */
+
+/* Considerando o que vc aprendeu sobre performance, resolva os exercicios abaixo */
+
+SELECT COUNT(*) FROM FUNCIONARIOS;
++----------+
+| COUNT(*) |
++----------+
+|      975 |
++----------+
+
+--Traga os funcionarios que trabalhem
+--no departamento de filmes OU no
+--departamento de roupas
+
+-- 21 | Filmes   53 | Roupas
+
+--Como estamos trabalhando com OR e a segunda condicao é opcional
+--colocamos na primeira condicao quem tem mais chances de uma saida
+--verdadeira, pois a segunda condicao nao será checada nesse caso.
+
+select * from funcionarios
+where departamento = 'Roupas'
+or
+departamento = 'Filmes';
+
++---------------+------------+-----------------------------------+-----------+--------------+------------+---------+-------------------------------+----------+
+| idFuncionario | nome       | email                             | sexo      | departamento | admissao   | salario | cargo                         | idRegiao |
++---------------+------------+-----------------------------------+-----------+--------------+------------+---------+-------------------------------+----------+
+|            12 | Black      | mblackb@edublogs.org              | Masculino | Roupas       | 2/4/2003   |   44179 | Data Coordiator               |        7 |
+|            29 | Price      | cprices@Brasil.gov                | Feminino  | Roupas       | 7/5/2013   |   95436 | Quality Engineer              |        3 |
+|            40 | Hawkins    | phawkins13@twitpic.com            | Feminino  | Roupas       | 8/20/2011  |   76809 | Quality Engineer              |        6 |
+|            47 | Oliver     | joliver1a@cnbc.com                | Feminino  | Roupas       | 8/30/2013  |   42797 | Software Engineer III         |        5 |
+|            79 | Cunningham | acunningham26@simplemachines.org  | Masculino | Roupas       | 9/15/2002  |   88345 | Junior Executive              |        6 |
+|           108 | Perkins    | jperkins2z@prlog.org              | Masculino | Roupas       | 7/14/2005  |   68344 | Senior Cost Accountant        |        7 |
+|           109 | Freeman    | bfreeman30@fda.gov                | Feminino  | Roupas       | 10/14/2007 |  147868 | General Manager               |        6 |
+|           115 | Nguyen     | rnguyen36@bandcamp.com            | Feminino  | Roupas       | 6/30/2007  |   58420 | Graphic Designer              |        1 |
+|           119 | Washington | wwashington3a@dot.gov             | Feminino  | Roupas       | 10/6/2008  |  148408 | Speech Pathologist            |        3 |
+|           176 | Fisher     | rfisher4v@jigsy.com               | Masculino | Roupas       | 10/14/2012 |   67942 | Financial Advisor             |        6 |
+|           177 | Ferguson   | nferguson4w@networksolutions.com  | Feminino  | Roupas       | 9/18/2008  |   80397 | Compensation Analyst          |        1 |
+|           185 | Watson     | rwatson54@webeden.co.uk           | Feminino  | Roupas       | 9/22/2001  |   74648 | Saúde Coach III               |        2 |
+|           231 | Day        | lday6e@usgs.gov                   | Feminino  | Roupas       | 7/3/2005   |   87800 | Sales Associate               |        7 |
+|           238 | Gonzales   | cgonzales6l@berkeley.edu          | Masculino | Filmes       | 4/6/2014   |  131274 | Clinical Specialist           |        2 |
+|           241 | Rose       | jrose6o@dion.ne.jp                | Feminino  | Roupas       | 12/22/2010 |  107207 | Web Developer II              |        3 |
+|           263 | Snyder     | dsnyder7a@digg.com                | Masculino | Filmes       | 1/29/2005  |  109004 | Account Coordinator           |        5 |
+|           273 | Gordon     | egordon7k@yellowbook.com          | Feminino  | Filmes       | 1/6/2013   |  142840 | Account Coordinator           |        1 |
+|           277 | Richardson | lrichardson7o@fc2.com             | Feminino  | Roupas       | 7/14/2003  |  142403 | Engineer III                  |        3 |
+|           294 | Cooper     | icooper85@w3.org                  | Feminino  | Filmes       | 1/31/2009  |   61519 | Human Resources Assistant III |        7 |
+|           298 | Berry      | lberry89@gov.uk                   | Masculino | Roupas       | 6/17/2010  |   43067 | Research Assistant I          |        7 |
+|           300 | Arnold     | barnold8b@thetimes.co.uk          | Masculino | Roupas       | 11/15/2005 |   77635 | VP Product Management         |        3 |
+|           312 | Jordan     | pjordan8n@adobe.com               | Feminino  | Roupas       | 11/15/2003 |  133498 | Nuclear Power Engineer        |        7 |
+|           325 | Wright     | kwright90@buzzfeed.com            | Feminino  | Roupas       | 5/13/2012  |  107727 | Computer Systems Analyst I    |        2 |
+|           337 | Spencer    | dspencer9c@ed.gov                 | Masculino | Filmes       | 6/16/2008  |   83256 | Senior Editor                 |        5 |
+|           365 | Gonzales   | jgonzalesa4@cpanel.net            | Masculino | Roupas       | 8/30/2000  |  127393 | Help Desk Technician          |        7 |
+|           383 | Young      | pyoungam@theguardian.com          | Masculino | Roupas       | 12/10/2002 |  104079 | Systems Administrator IV      |        4 |
+|           391 | White      | cwhiteau@amazon.de                | Feminino  | Roupas       | 11/4/2003  |  147702 | VP Quality Control            |        4 |
+|           402 | Marshall   | emarshallb5@yahoo.co.jp           | Feminino  | Roupas       | 11/10/2007 |   93266 | Recruiter                     |        7 |
+|           429 | Ortiz      | jortizbw@t.co                     | Feminino  | Roupas       | 1/23/2003  |   75024 | Structural Analysis Engineer  |        6 |
+|           437 | Roberts    | arobertsc4@businessweek.com       | Masculino | Filmes       | 7/10/2007  |   48934 | Electrical Engineer           |        6 |
+|           439 | Boyd       | eboydc6@unc.edu                   | Masculino | Roupas       | 4/1/2002   |  108854 | Senior Editor                 |        4 |
+|           449 | Gray       | tgraycg@fotki.com                 | Feminino  | Roupas       | 4/20/2014  |  134205 | Biostatistician I             |        4 |
+|           458 | Little     | dlittlecp@usatoday.com            | Feminino  | Filmes       | 5/14/2000  |   91660 | Research Assistant I          |        5 |
+|           490 | Griffin    | bgriffindl@pbs.org                | Masculino | Filmes       | 4/8/2000   |  116480 | Nurse Practicioner            |        5 |
+|           515 | Gomez      | kgomezea@bloglovin.com            | Masculino | Roupas       | 5/1/2002   |   55747 | Human Resources Assistant I   |        1 |
+|           521 | Williamson | dwilliamsoneg@creativecommons.org | Masculino | Roupas       | 10/6/2003  |  118602 | Director of Sales             |        5 |
+|           527 | Richards   | jrichardsem@1688.com              | Masculino | Roupas       | 4/20/2005  |   69705 | Senior Developer              |        3 |
+|           539 | Kelley     | rkelleyey@feedburner.com          | Masculino | Filmes       | 3/20/2012  |  110660 | Senior Financial Analyst      |        4 |
+|           560 | Kim        | jkimfj@dropbox.com                | Masculino | Roupas       | 1/22/2014  |   67845 | Administrative Officer        |        7 |
+|           570 | James      | rjamesft@jiathis.com              | Feminino  | Roupas       | 3/21/2001  |  136377 | Software Engineer I           |        7 |
+|           576 | Taylor     | staylorfz@issuu.com               | Masculino | Roupas       | 7/13/2006  |   50235 | Assistant Media Planner       |        1 |
+|           578 | Lynch      | hlynchg1@washingtonpost.com       | Masculino | Roupas       | 5/2/2006   |  111318 | Technical Writer              |        3 |
+|           589 | Arnold     | sarnoldgc@parallels.com           | Masculino | Filmes       | 1/27/2005  |  135786 | Account Representative I      |        7 |
+|           604 | Greene     | agreenegr@cmu.edu                 | Masculino | Roupas       | 6/30/2004  |  104517 | Research Assistant III        |        2 |
+|           615 | Alexander  | falexanderh2@irs.gov              | Feminino  | Roupas       | 12/25/2009 |   72854 | Marketing Assistant           |        7 |
+|           618 | Phillips   | wphillipsh5@economist.com         | Masculino | Roupas       | 6/7/2001   |  128205 | Sales Representative          |        6 |
+|           642 | Warren     | awarrenht@addthis.com             | Feminino  | Filmes       | 5/15/2009  |  126201 | Electrical Engineer           |        2 |
+|           657 | Reid       | areidi8@wunderground.com          | Feminino  | Roupas       | 6/29/2013  |   65154 | Sales Representative          |        5 |
+|           699 | Price      | bpriceje@icio.us                  | Feminino  | Roupas       | 1/25/2003  |  133091 | VP Accounting                 |        7 |
+|           705 | Clark      | pclarkjk@joomla.org               | Masculino | Filmes       | 10/25/2009 |   97150 | VP Accounting                 |        6 |
+|           711 | Roberts    | jrobertsjq@ed.gov                 | Masculino | Roupas       | 8/21/2009  |   80743 | Geological Engineer           |        4 |
+|           722 | Hill       | khillk1@about.me                  | Feminino  | Roupas       | 8/31/2002  |   73262 | Information Systems Manager   |        5 |
+|           727 | Johnson    | mjohnsonk6@sciencedaily.com       | Masculino | Filmes       | 5/21/2012  |   83165 | Account Representative I      |        5 |
+|           732 | Murray     | amurraykb@blinklist.com           | Masculino | Roupas       | 8/15/2004  |   50511 | Senior Cost Accountant        |        3 |
+|           735 | Richards   | jrichardske@hatena.ne.jp          | Masculino | Roupas       | 11/14/2014 |  116333 | Legal Assistant               |        5 |
+|           748 | Elliott    | delliottkr@dot.gov                | Masculino | Roupas       | 12/9/2009  |  119097 | Administrative Assistant I    |        2 |
+|           772 | Elliott    | delliottlf@fda.gov                | Masculino | Filmes       | 10/13/2004 |  100570 | Senior Financial Analyst      |        5 |
+|           776 | Olson      | kolsonlj@friendfeed.com           | Feminino  | Roupas       | 9/27/2013  |  107535 | Office Assistant III          |        7 |
+|           782 | Weaver     | jweaverlp@unblog.fr               | Masculino | Filmes       | 11/9/2011  |  120226 | Software Engineer II          |        4 |
+|           789 | James      | kjameslw@yellowbook.com           | Masculino | Roupas       | 3/20/2005  |  130188 | Structural Analysis Engineer  |        1 |
+|           799 | Sims       | asimsm6@lycos.com                 | Feminino  | Roupas       | 3/9/2013   |  146024 | Actuary                       |        7 |
+|           801 | Gomez      | tgomezm8@ucoz.ru                  | Feminino  | Filmes       | 9/20/2012  |  101582 | Biostatistician II            |        7 |
+|           802 | Knight     | dknightm9@quantcast.com           | Feminino  | Filmes       | 5/30/2006  |  100716 | Help Desk Operator            |        3 |
+|           818 | Rice       | jricemp@columbia.edu              | Feminino  | Filmes       | 4/5/2002   |   82077 | Data Coordiator               |        4 |
+|           847 | Knight     | dknightni@unc.edu                 | Feminino  | Roupas       | 3/22/2008  |   91532 | Operator                      |        4 |
+|           856 | Roberts    | trobertsnr@over-blog.com          | Feminino  | Roupas       | 2/21/2004  |  139714 | Help Desk Operator            |        2 |
+|           868 | Price      | jpriceo3@google.it                | Masculino | Filmes       | 1/24/2003  |   52612 | Analyst Programmer            |        7 |
+|           913 | Kelley     | mkelleypc@sourceforge.net         | Feminino  | Roupas       | 2/20/2012  |  116266 | Marketing Assistant           |        6 |
+|           919 | Bishop     | kbishoppi@ovh.net                 | Feminino  | Filmes       | 12/18/2010 |   53798 | Mechanical Systems Engineer   |        1 |
+|           929 | Rice       | ericeps@reference.com             | Feminino  | Roupas       | 8/8/2003   |   66357 | Cost Accountant               |        3 |
+|           955 | Marshall   | wmarshallqi@fastcompany.com       | Masculino | Roupas       | 4/18/2005  |   59234 | VP Product Management         |        7 |
+|           963 | Burton     | cburtonqq@github.io               | Feminino  | Roupas       | 6/20/2012  |   58697 | Teacher                       |        4 |
+|           969 | Richards   | jrichardsqw@blog.com              | Masculino | Roupas       | 7/5/2014   |   85294 | Media Manager I               |        4 |
+|           973 | Walker     | swalkerr0@sina.com.cn             | Feminino  | Filmes       | 5/11/2009  |   51132 | Assistant Manager             |        4 |
++---------------+------------+-----------------------------------+-----------+--------------+------------+---------+-------------------------------+----------+
+
+SELECT COUNT(*), departamento
+FROM FUNCIONARIOS
+group by departamento;
++----------+--------------+
+| COUNT(*) | departamento |
++----------+--------------+
+|       46 | Alimentícios |
+|       46 | Automotivo   |
+|       45 | Bebês        |
+|       53 | Beleza       |
+|       47 | Books        |
+|       41 | Brinquedos   |
+|       43 | Calçados     |
+|       52 | Computadores |
+|       38 | Crianças     |
+|       49 | Eletronicos  |
+|       40 | Esporte      |
+|       39 | Ferramentas  |
+|       21 | Filmes       |
+|       49 | Games        |
+|       47 | Industrial   |
+|       47 | Jardim       |
+|       36 | Joalheria    |
+|       52 | Lar          |
+|       37 | Música       |
+|       48 | Outdoors     |
+|       53 | Roupas       |
+|       46 | Saúde        |
++----------+--------------+
+
+SELECT COUNT(*), departamento
+FROM FUNCIONARIOS
+group by departamento
+order by 1;
++----------+--------------+
+| COUNT(*) | departamento |
++----------+--------------+
+|       21 | Filmes       |
+|       36 | Joalheria    |
+|       37 | Música       |
+|       38 | Crianças     |
+|       39 | Ferramentas  |
+|       40 | Esporte      |
+|       41 | Brinquedos   |
+|       43 | Calçados     |
+|       45 | Bebês        |
+|       46 | Automotivo   |
+|       46 | Saúde        |
+|       46 | Alimentícios |
+|       47 | Jardim       |
+|       47 | Books        |
+|       47 | Industrial   |
+|       48 | Outdoors     |
+|       49 | Games        |
+|       49 | Eletronicos  |
+|       52 | Computadores |
+|       52 | Lar          |
+|       53 | Beleza       |
+|       53 | Roupas       |
++----------+--------------+
+
+WHERE DEPARTAMENTO = 'Filmes' OR DEPARTAMENTO = 'Roupas'
+
+--O gestor de marketing pediu a lista das funcionarias (AS) = FEMININO que trabalhem no departamento 
+--de filmes ou no departamento lar. Ele necessita enviar um email para as colaboradoras
+--desses dois setores. OR +  AND *
+
+--Feminino 491 ocorrencias
+select count(*), sexo
+from funcionarios
+group by sexo;
+
++----------+-----------+
+| count(*) | sexo      |
++----------+-----------+
+|      491 | Feminino  |
+|      484 | Masculino |
++----------+-----------+
+
+--52 | Lar  21 Filmes
+select count(*), departamento
+from funcionarios
+group by departamento;
++----------+--------------+
+| count(*) | departamento |
++----------+--------------+
+|       46 | Alimentícios |
+|       46 | Automotivo   |
+|       45 | Bebês        |
+|       53 | Beleza       |
+|       47 | Books        |
+|       41 | Brinquedos   |
+|       43 | Calçados     |
+|       52 | Computadores |
+|       38 | Crianças     |
+|       49 | Eletronicos  |
+|       40 | Esporte      |
+|       39 | Ferramentas  |
+|       21 | Filmes       |
+|       49 | Games        |
+|       47 | Industrial   |
+|       47 | Jardim       |
+|       36 | Joalheria    |
+|       52 | Lar          |
+|       37 | Música       |
+|       48 | Outdoors     |
+|       53 | Roupas       |
+|       46 | Saúde        |
++----------+--------------+
+
+SELECT * FROM FUNCIONARIOS
+WHERE
+( DEPARTAMENTO = 'Lar' AND SEXO = 'Feminino' )
+OR
+( DEPARTAMENTO = 'Filmes' AND SEXO = 'Feminino' );
++---------------+------------+-----------------------------------+----------+--------------+------------+---------+-------------------------------+----------+
+| idFuncionario | nome       | email                             | sexo     | departamento | admissao   | salario | cargo                         | idRegiao |
++---------------+------------+-----------------------------------+----------+--------------+------------+---------+-------------------------------+----------+
+|            26 | Porter     | vporterp@yelp.com                 | Feminino | Lar          | 5/30/2011  |   90746 | Dental Hygienist              |        2 |
+|            27 | Owens      | cowensq@shareasale.com            | Feminino | Lar          | 5/26/2005  |   78698 | Executive Secretary           |        2 |
+|            37 | Cruz       | rcruz10@blinklist.com             | Feminino | Lar          | 5/20/2000  |   61739 | Quality Engineer              |        1 |
+|            74 | Washington | jwashington21@squidoo.com         | Feminino | Lar          | 7/11/2000  |   47206 | Programmer III                |        3 |
+|            82 | Gilbert    | hgilbert29@xrea.com               | Feminino | Lar          | 5/11/2003  |   93712 | Junior Executive              |        7 |
+|           132 | Montgomery | rmontgomery3n@chicagotribune.com  | Feminino | Lar          | 5/14/2003  |   63929 | Research Assistant IV         |        5 |
+|           221 | Diaz       | sdiaz64@disqus.com                | Feminino | Lar          | 1/15/2005  |   55077 | Registered Nurse              |        7 |
+|           257 | Freeman    | gfreeman74@bloomberg.com          | Feminino | Lar          | 6/5/2012   |   83804 | Operator                      |        1 |
+|           273 | Gordon     | egordon7k@yellowbook.com          | Feminino | Filmes       | 1/6/2013   |  142840 | Account Coordinator           |        1 |
+|           294 | Cooper     | icooper85@w3.org                  | Feminino | Filmes       | 1/31/2009  |   61519 | Human Resources Assistant III |        7 |
+|           313 | Gibson     | bgibson8o@pen.io                  | Feminino | Lar          | 3/21/2011  |   81273 | Saúde Coach II                |        4 |
+|           319 | Crawford   | mcrawford8u@parallels.com         | Feminino | Lar          | 12/20/2011 |  140996 | Software Engineer IV          |        3 |
+|           336 | Campbell   | pcampbell9b@istockphoto.com       | Feminino | Lar          | 8/30/2001  |   40415 | Food Chemist                  |        4 |
+|           353 | Gonzales   | jgonzales9s@sourceforge.net       | Feminino | Lar          | 7/10/2010  |   91249 | Mechanical Systems Engineer   |        2 |
+|           382 | Payne      | jpayneal@comsenz.com              | Feminino | Lar          | 8/10/2012  |   92879 | Nurse                         |        2 |
+|           398 | Cooper     | scooperb1@cmu.edu                 | Feminino | Lar          | 5/8/2001   |   68584 | Quality Engineer              |        2 |
+|           403 | Chapman    | schapmanb6@nhs.uk                 | Feminino | Lar          | 3/9/2002   |   69702 | Food Chemist                  |        1 |
+|           409 | Williams   | swilliamsbc@bing.com              | Feminino | Lar          | 4/22/2007  |   58235 | Analog Circuit Design manager |        6 |
+|           418 | Morales    | dmoralesbl@mit.edu                | Feminino | Lar          | 10/2/2013  |  149598 | VP Product Management         |        3 |
+|           424 | Berry      | jberrybr@discuz.net               | Feminino | Lar          | 8/20/2013  |  148640 | Internal Auditor              |        4 |
+|           458 | Little     | dlittlecp@usatoday.com            | Feminino | Filmes       | 5/14/2000  |   91660 | Research Assistant I          |        5 |
+|           506 | Cox        | ncoxe1@1und1.de                   | Feminino | Lar          | 1/1/2008   |   49048 | Sales Associate               |        1 |
+|           535 | Morris     | rmorriseu@yahoo.com               | Feminino | Lar          | 7/25/2007  |  131662 | Help Desk Operator            |        3 |
+|           543 | Walker     | kwalkerf2@vinaora.com             | Feminino | Lar          | 9/7/2013   |  120085 | Human Resources Assistant III |        6 |
+|           567 | Myers      | dmyersfq@amazon.com               | Feminino | Lar          | 5/27/2010  |  139060 | Assistant Professor           |        7 |
+|           586 | Olson      | folsong9@acquirethisname.com      | Feminino | Lar          | 7/1/2003   |  110411 | Compensation Analyst          |        3 |
+|           593 | Evans      | aevansgg@wordpress.org            | Feminino | Lar          | 6/15/2000  |   94980 | Financial Advisor             |        4 |
+|           642 | Warren     | awarrenht@addthis.com             | Feminino | Filmes       | 5/15/2009  |  126201 | Electrical Engineer           |        2 |
+|           706 | Mendoza    | rmendozajl@g.co                   | Feminino | Lar          | 12/5/2011  |   91655 | Cost Accountant               |        5 |
+|           731 | Ferguson   | gfergusonka@geocities.jp          | Feminino | Lar          | 6/28/2009  |   70524 | VP Accounting                 |        2 |
+|           752 | Gonzales   | rgonzaleskv@meetup.com            | Feminino | Lar          | 1/24/2011  |   95810 | Food Chemist                  |        4 |
+|           761 | Burke      | eburkel4@newsvine.com             | Feminino | Lar          | 12/14/2014 |  106033 | Quality Control Specialist    |        1 |
+|           790 | Murray     | cmurraylx@icio.us                 | Feminino | Lar          | 4/25/2013  |   97607 | Accountant IV                 |        3 |
+|           801 | Gomez      | tgomezm8@ucoz.ru                  | Feminino | Filmes       | 9/20/2012  |  101582 | Biostatistician II            |        7 |
+|           802 | Knight     | dknightm9@quantcast.com           | Feminino | Filmes       | 5/30/2006  |  100716 | Help Desk Operator            |        3 |
+|           818 | Rice       | jricemp@columbia.edu              | Feminino | Filmes       | 4/5/2002   |   82077 | Data Coordiator               |        4 |
+|           896 | Carpenter  | rcarpenterov@pagesperso-orange.fr | Feminino | Lar          | 10/28/2010 |  134813 | Saúde Coach I                 |        7 |
+|           919 | Bishop     | kbishoppi@ovh.net                 | Feminino | Filmes       | 12/18/2010 |   53798 | Mechanical Systems Engineer   |        1 |
+|           938 | Jones      | djonesq1@tamu.edu                 | Feminino | Lar          | 2/10/2002  |   73668 | Environmental Specialist      |        2 |
+|           973 | Walker     | swalkerr0@sina.com.cn             | Feminino | Filmes       | 5/11/2009  |   51132 | Assistant Manager             |        4 |
+|           980 | Sanchez    | tsanchezr7@lycos.com              | Feminino | Lar          | 12/19/2014 |   83704 | Editor                        |        5 |
++---------------+------------+-----------------------------------+----------+--------------+------------+---------+-------------------------------+----------+
+
+--Traga os funcionarios do sexo masculino
+--ou os funcionarios que trabalhem no setor Jardim
+
+SELECT * FROM FUNCIONARIOS
+WHERE
+SEXO = 'Masculino' OR
+DEPARTAMENTO = 'Jardim';
+
 
 /*Filtrando valores nulos*/
+
+USE PROJETO;
 
 SELECT NOME, SEXO, ENDERECO
 FROM CLIENTE
 WHERE EMAIL IS NULL;
 
+Empty set (0.00 sec)
+
 SELECT NOME, SEXO, ENDERECO
 FROM CLIENTE
 WHERE EMAIL IS NOT NULL;
++--------+------+----------------------------------------------+
+| NOME   | SEXO | ENDERECO                                     |
++--------+------+----------------------------------------------+
+| JOAO   | M    | MAIA LACERDA - ESTACIO - RIO DE JANEIRO - RJ |
+| CELIA  | F    | RIACHUELO - RIO DE JANEIRO - RJ              |
+| MARCOS | F    | RUA COPER LEAF - WILLIANSBURG - KITCHENER    |
+| CARLA  | F    | RUA COPER LEAF - WILLIANSBURG - KITCHENER    |
++--------+------+----------------------------------------------+
 
 
 /* Usando update para atualizar os dados em uma tabela*/
@@ -1394,6 +1869,14 @@ WHERE EMAIL IS NOT NULL;
 
 SELECT NOME, CPF
 FROM CLIENTE;
++--------+-----------+
+| NOME   | CPF       |
++--------+-----------+
+| JOAO   | 333333333 |
+| CELIA  | 222222222 |
+| MARCOS | 456388549 |
+| CARLA  | 456388549 |
++--------+-----------+
 
 UPDATE CLIENTE
 SET NOME = 'MARIA'
@@ -1407,6 +1890,14 @@ SET EMAIL = 'MARIA@GMAIL.COM'
 WHERE NOME = MARIA;
 
 SELECT * FROM CLIENTE;
++--------+-----------+-------------------+-----------+----------------------------------------------+------+
+| NOME   | CPF       | EMAIL             | TELEFONE  | ENDERECO                                     | SEXO |
++--------+-----------+-------------------+-----------+----------------------------------------------+------+
+| JOAO   | 333333333 | JOAO@GMAIL.COM    | 123456789 | MAIA LACERDA - ESTACIO - RIO DE JANEIRO - RJ | M    |
+| CELIA  | 222222222 | CELIA@GMAIL.COM   | 234567891 | RIACHUELO - RIO DE JANEIRO - RJ              | F    |
+| MARCOS | 456388549 | MARCOS@GMAIL.COM  | 4575-0048 | RUA COPER LEAF - WILLIANSBURG - KITCHENER    | F    |
+| CARLA  | 456388549 | C.LOPES@GMAIL.COM | 4575-0048 | RUA COPER LEAF - WILLIANSBURG - KITCHENER    | F    |
++--------+-----------+-------------------+-----------+----------------------------------------------+------+
 
 /* Usando DELETE para excluir dados de uma tabela*/
 
@@ -1415,9 +1906,19 @@ SELECT * FROM CLIENTE;
 /* Sempre confire e conte os dados */
 
 SELECT COUNT(*) FROM CLIENTE; --vai mostrar o total de registros
++----------+
+| COUNT(*) |
++----------+
+|        4 |
++----------+
 
 SELECT COUNT(*) FROM CLIENTE -- Vai contar comente pela seleção por nome por exemplo
 WHERE NOME = 'MARIA';
++----------+
+| COUNT(*) |
++----------+
+|        0 |
++----------+
 
 DELETE FROM CLIENTE
 WHERE NOME = 'MARIA';
@@ -1459,6 +1960,20 @@ CREATE DATABASE COMERCIO;
 USE COMERCIO;
 
 SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| comercio           |
+| exercicio          |
+| livraria           |
+| mysql              |
+| performance_schema |
+| projeto            |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
 
 CREATE TABLE CLIENTE(
 	IDCLIENTE INT PRIMARY KEY AUTO_INCREMENT, -- id sempre será um identificador e auto incremente, sempre será adicionado automaticamente pelo banco
@@ -1475,7 +1990,7 @@ CREATE TABLE ENDERECO(
 	CIDADE VARCHAR(30) NOT NULL,
 	ESTADO CHAR(2) NOT NULL,
 	ID_CLIENTE INT UNIQUE, -- PARA SE REFERENCIAR UMA CHAVE ESTRANGEIRA DEVE SE USAR O MESMO TIPO DO ID DA TABELA PRINCIPAL
-	FOREIGN KEY (ID_CLIENTE) -- ADICIONAR A CLAUSULA UNIQUE EM TABELAS COM CARDINALIDAD E (1,1)
+	FOREIGN KEY (ID_CLIENTE) -- ADICIONAR A CLAUSULA UNIQUE EM TABELAS COM CARDINALIDADE (1,1)
 	REFERENCES CLIENTE(IDCLIENTE) -- CHAVE ESTRANGEIRA ID_CLIENTE, REFERENCIA DA TABELA CLIENTE, DO CAMPO CHAVE PRIMARIA IDCLIENTE
 );
 
@@ -1507,7 +2022,204 @@ DROP TABLE (NOME TABELA)
 
 
 USE COMERCIO ;
-SHOW TABLES;
-DESC CLIENTE;
 
-INSERT INTO CLIENTE VALUES (NULL, 'JOAO', 'M', '76576576576')
+SHOW TABLES;
++--------------------+
+| Tables_in_comercio |
++--------------------+
+| cliente            |
+| endereco           |
+| telefone           |
++--------------------+
+
+DESC CLIENTE;
++-----------+---------------+------+-----+---------+----------------+
+| Field     | Type          | Null | Key | Default | Extra          |
++-----------+---------------+------+-----+---------+----------------+
+| IDCLIENTE | int(11)       | NO   | PRI | NULL    | auto_increment |
+| NOME      | varchar(30)   | NO   |     | NULL    |                |
+| SEXO      | enum('M','F') | NO   |     | NULL    |                |
+| EMAIL     | varchar(50)   | YES  | UNI | NULL    |                |
+| CFP       | varchar(15)   | YES  | UNI | NULL    |                |
++-----------+---------------+------+-----+---------+----------------+
+INSERT INTO CLIENTE VALUES (NULL, 'JOAO', 'M', 'JOAO@GMAIL.COM', '76576576576');
+INSERT INTO CLIENTE VALUES (NULL, 'CARLOS', 'M','CARLOS@GMAIL.COM', '67495137854');
+INSERT INTO CLIENTE VALUES (NULL, 'ANA', 'F', 'ANA@GMAIL.COM', '96458231749');
+INSERT INTO CLIENTE VALUES (NULL, 'CLARA','F', NULL, '98546732164');
+INSERT INTO CLIENTE VALUES (NULL, 'CELIA', 'F', 'CELIA@GMAIL.COM', '65478932146');
+INSERT INTO CLIENTE VALUES (NULL, 'MARIA', 'F', 'MARIA@GMAIL.COM', '12345678979');
+
+
+SELECT * FROM CLIENTE; 
++-----------+--------+------+------------------+-------------+
+| IDCLIENTE | NOME   | SEXO | EMAIL            | CFP         |
++-----------+--------+------+------------------+-------------+
+|         1 | JOAO   | M    | JOAO@GMAIL.COM   | 76576576576 |
+|         2 | CARLOS | M    | CARLOS@GMAIL.COM | 67495137854 |
+|         3 | ANA    | F    | ANA@GMAIL.COM    | 96458231749 |
+|         4 | CLARA  | F    | NULL             | 98546732164 |
+|         5 | CELIA  | F    | CELIA@GMAIL.COM  | 65478932146 |
+|         6 | MARIA  | F    | MARIA@GMAIL.COM  | 12345678979 |
++-----------+--------+------+------------------+-------------+
+
+DESC ENDERECO;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| IDENDERECO | int(11)     | NO   | PRI | NULL    | auto_increment |
+| RUA        | varchar(30) | NO   |     | NULL    |                |
+| BAIRRO     | varchar(30) | NO   |     | NULL    |                |
+| CIDADE     | varchar(30) | NO   |     | NULL    |                |
+| ESTADO     | char(2)     | NO   |     | NULL    |                |
+| ID_CLIENTE | int(11)     | YES  | UNI | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+/*QUANDO SE TEM UM UNIQUE NA CHAVE ESTRANGUEIRA DE UMA TABELA COM CARDINALIDADE (1,1), SIGNIFICA QUE SERÁ INSERIDO UM UNICO DADO DE RELACIONAMENTO NA TABELA QUE REFERENCIA A CHAVE PRIMARIA */
+INSERT INTO ENDERECO VALUES (NULL, 'RUA ANTONIO SA', 'CENTRO', 'B. HORIZONTE','MG', 4);
+INSERT INTO ENDERECO VALUES (NULL, 'RUA CAPITAO HERMES', 'CENTRO', 'RIO DE JANEIRO', 'RJ', 1);
+INSERT INTO ENDERECO VALUES (NULL, 'RUA PRES. VARGAS', 'JARDINS', 'SAO PAULO', 'SP', 3);
+INSERT INTO ENDERECO VALUES (NULL, 'RUA ALFANDEGA', 'ESTACIO', 'RIO DE JANEIRO', 'RJ', 2);
+INSERT INTO ENDERECO VALUES (NULL, 'RUA DO OUVIDOR', 'FLAMENGO', 'RIO DE JANEIRO', 'RJ', 6);
+INSERT INTO ENDERECO VALUES (NULL, 'RUA URUGUAINA', 'CENTRO', 'VITORIA', 'ES', 5);
+
+SELECT * FROM ENDERECO; 
++------------+--------------------+----------+----------------+--------+------------+
+| IDENDERECO | RUA                | BAIRRO   | CIDADE         | ESTADO | ID_CLIENTE |
++------------+--------------------+----------+----------------+--------+------------+
+|          1 | RUA ANTONIO SA     | CENTRO   | B. HORIZONTE   | MG     |          4 |
+|          2 | RUA CAPITAO HERMES | CENTRO   | RIO DE JANEIRO | RJ     |          1 |
+|          3 | RUA PRES. VARGAS   | JARDINS  | SAO PAULO      | SP     |          3 |
+|          4 | RUA ALFANDEGA      | ESTACIO  | RIO DE JANEIRO | RJ     |          2 |
+|          5 | RUA DO OUVIDOR     | FLAMENGO | RIO DE JANEIRO | RJ     |          6 |
+|          6 | RUA URUGUAINA      | CENTRO   | VITORIA        | ES     |          5 |
++------------+--------------------+----------+----------------+--------+------------+
+
+DESC TELEFONE;
++------------+-------------------------+------+-----+---------+----------------+
+| Field      | Type                    | Null | Key | Default | Extra          |
++------------+-------------------------+------+-----+---------+----------------+
+| IDTELEFONE | int(11)                 | NO   | PRI | NULL    | auto_increment |
+| TIPO       | enum('RES','COM','CEL') | NO   |     | NULL    |                |
+| NUMERO     | varchar(10)             | NO   |     | NULL    |                |
+| ID_CLIENTE | int(11)                 | YES  | MUL | NULL    |                |
++------------+-------------------------+------+-----+---------+----------------+
+/*QUANDO NÃO SE TEM UM UNIQUE NA CHAVE ESTRANGUEIRA DE UMA TABELA COM CARDINALIDADE (1,N), SIGNIFICA QUE PODERÁ SER INSERIDO VÁRIOS DADOS DE RELACIONAMENTO NA TABELA QUE REFERENCIA A CHAVE PRIMARIA*/
+INSERT INTO TELEFONE VALUES (NULL, 'CEL', '659847125', 5);
+INSERT INTO TELEFONE VALUES (NULL, 'RES', '84776523', 5);
+INSERT INTO TELEFONE VALUES (NULL, 'CEL', '554781238', 1);
+INSERT INTO TELEFONE VALUES (NULL, 'COM', '95784623', 2);
+INSERT INTO TELEFONE VALUES (NULL, 'RES', '33568897', 1);
+INSERT INTO TELEFONE VALUES (NULL, 'CEL', '885746658', 3);
+INSERT INTO TELEFONE VALUES (NULL, 'CEL', '558796643', 3);
+INSERT INTO TELEFONE VALUES (NULL, 'COM', '86547451', 1);
+INSERT INTO TELEFONE VALUES (NULL, 'RES', '78451236', 5);
+INSERT INTO TELEFONE VALUES (NULL, 'CEL', '897456823', 2);
+
+SELECT * FROM TELEFONE; 
++------------+------+-----------+------------+
+| IDTELEFONE | TIPO | NUMERO    | ID_CLIENTE |
++------------+------+-----------+------------+
+|          1 | CEL  | 659847125 |          5 |
+|          2 | RES  | 84776523  |          5 |
+|          3 | CEL  | 554781238 |          1 |
+|          4 | COM  | 95784623  |          2 |
+|          5 | RES  | 33568897  |          1 |
+|          6 | CEL  | 885746658 |          3 |
+|          7 | CEL  | 558796643 |          3 |
+|          8 | COM  | 86547451  |          1 |
+|          9 | RES  | 78451236  |          5 |
+|         10 | CEL  | 897456823 |          2 |
++------------+------+-----------+------------+
+
+SHOW TABLES;
++--------------------+
+| Tables_in_comercio |
++--------------------+
+| cliente            |
+| endereco           |
+| telefone           |
++--------------------+
+
+/*PROJEÇÃO, SELEÇÃO, JUNÇÃO*/
+
+-- PROJEÇÃO -> É TUDO QUE EU QUERO VER NA TELA = SELECT 
+-- SELEÇÃO SUBCONJUNTO DE REGISTROS DE UMA TABELA = WHERE
+-- JUNÇÃO JUNTA OS DADOS DAS TABELAS DE RELACIONAMENTO = JOIN
+
+SELECT NOME, SEXO, BAIRRO, CIDADE 
+FROM CLIENTE
+INNER JOIN ENDERECO
+ON IDCLIENTE = ID_CLIENTE;
+/* PROJETE NOME, SEXO, BAIRRO, CIDADE
+DA TABELA CLIENTE
+ME JUNTE COM A TABELA ENDERECO
+ONDE IDCLIENTE SEJA IGUAL ID_CLIENTE*/
+
++--------+------+----------+----------------+
+| NOME   | SEXO | BAIRRO   | CIDADE         |
++--------+------+----------+----------------+
+| JOAO   | M    | CENTRO   | RIO DE JANEIRO |
+| CARLOS | M    | ESTACIO  | RIO DE JANEIRO |
+| ANA    | F    | JARDINS  | SAO PAULO      |
+| CLARA  | F    | CENTRO   | B. HORIZONTE   |
+| CELIA  | F    | CENTRO   | VITORIA        |
+| MARIA  | F    | FLAMENGO | RIO DE JANEIRO |
++--------+------+----------+----------------+
+
+SELECT NOME, SEXO, BAIRRO, CIDADE /*PROJEÇÃO*/
+FROM CLIENTE /*ORIGEM*/
+INNER JOIN ENDERECO /*JUNÇÃO*/
+ON IDCLIENTE = ID_CLIENTE
+WHERE SEXO = 'F'; /*SELEÇÃO*/
++-------+------+----------+----------------+
+| NOME  | SEXO | BAIRRO   | CIDADE         |
++-------+------+----------+----------------+
+| ANA   | F    | JARDINS  | SAO PAULO      |
+| CLARA | F    | CENTRO   | B. HORIZONTE   |
+| CELIA | F    | CENTRO   | VITORIA        |
+| MARIA | F    | FLAMENGO | RIO DE JANEIRO |
++-------+------+----------+----------------+
+
+
+
+SELECT NOME, SEXO, BAIRRO, CIDADE 
+FROM CLIENTE
+INNER JOIN ENDERECO
+ON IDCLIENTE = ID_CLIENTE
+WHERE SEXO = 'M';
++--------+------+---------+----------------+
+| NOME   | SEXO | BAIRRO  | CIDADE         |
++--------+------+---------+----------------+
+| JOAO   | M    | CENTRO  | RIO DE JANEIRO |
+| CARLOS | M    | ESTACIO | RIO DE JANEIRO |
++--------+------+---------+----------------+
+
+SELECT NOME, SEXO, EMAIL, TIPO, NUMERO
+FROM CLIENTE
+INNER JOIN TELEFONE
+ON IDCLIENTE = ID_CLIENTE;
+/* 
+TABELA CLIENTE COM TABELA TELEFONE = (1,N) UM CLIENTE PODE TER VÁRIOS TELEFONES
+ISSO MOSTRA A REPETIÇÃO DOS DADOS DO MESMO USUARIO
+*/
++--------+------+------------------+------+-----------+
+| NOME   | SEXO | EMAIL            | TIPO | NUMERO    |
++--------+------+------------------+------+-----------+
+| JOAO   | M    | JOAO@GMAIL.COM   | CEL  | 554781238 |
+| JOAO   | M    | JOAO@GMAIL.COM   | RES  | 33568897  |
+| JOAO   | M    | JOAO@GMAIL.COM   | COM  | 86547451  |
+| CARLOS | M    | CARLOS@GMAIL.COM | COM  | 95784623  |
+| CARLOS | M    | CARLOS@GMAIL.COM | CEL  | 897456823 |
+| ANA    | F    | ANA@GMAIL.COM    | CEL  | 885746658 |
+| ANA    | F    | ANA@GMAIL.COM    | CEL  | 558796643 |
+| CELIA  | F    | CELIA@GMAIL.COM  | CEL  | 659847125 |
+| CELIA  | F    | CELIA@GMAIL.COM  | RES  | 84776523  |
+| CELIA  | F    | CELIA@GMAIL.COM  | RES  | 78451236  |
++--------+------+------------------+------+-----------+
+
+
+SELECT NOME, SEXO, BAIRRO, CIDADE, TIPO, NUMERO
+FROM CLIENTE
+INNER JOIN ENDERECO
+ON IDCLIENTE = ID_CLIENTE
+INNER JOIN TELEFONE
+ON IDCLIENTE = ID_CLIENTE;
