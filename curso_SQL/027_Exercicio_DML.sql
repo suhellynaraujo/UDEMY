@@ -406,3 +406,91 @@ AND (TIPO = 'RES' OR TIPO = 'COM');
 |        19 | JOICE@GMAIL.COM   | JOICE   | F    | RES  | CENTRO | RIO DE JANEIRO |
 |        19 | JOICE@GMAIL.COM   | JOICE   | F    | RES  | CENTRO | RIO DE JANEIRO |
 +-----------+-------------------+---------+------+------+--------+----------------+
+
+
+/* PARA UMA CAMPANHA DE MARKETING, O SETOR SOLICITOU UM
+RELATÓRIO COM O NOME, EMAIL E TELEFONE CELULAR 
+DOS CLIENTES QUE MORAM NO ESTADO DO RIO DE JANEIRO 
+VOCÊ TERÁ QUE PASSAR A QUERY PARA GERAR O RELATORIO PARA
+O PROGRAMADOR */
+
+SELECT   C.NOME, C.EMAIL, T.NUMERO AS CELULAR /* PROJECAO */
+FROM CLIENTE C /* ORIGEM */
+INNER JOIN ENDERECO E /*JUNCAO */
+ON C.IDCLIENTE = E.ID_CLIENTE /*JUNCAO CONDICAO */
+INNER JOIN TELEFONE T /*JUNCAO */
+ON C.IDCLIENTE = T.ID_CLIENTE /*JUNCAO CONDICAO*/
+WHERE TIPO = 'CEL' AND ESTADO = 'RJ'; /*SELECAO*/
++---------+-------------------+-----------+
+| NOME    | EMAIL             | CELULAR   |
++---------+-------------------+-----------+
+| JOAO    | JOAO@GMAIL.COM    | 554781238 |
+| CARLOS  | CARLOS@GMAIL.COM  | 897456823 |
+| DANIELE | DANIELE@GMAIL.COM | 33567765  |
+| DANIELE | DANIELE@GMAIL.COM | 88668786  |
++---------+-------------------+-----------+
+
+
+/* PARA UMA CAMPANHA DE PRODUTOS DE BELEZA, O COMERCIAL SOLICITOU UM
+RELATÓRIO COM O NOME, EMAIL E TELEFONE CELULAR 
+ DAS MULHERES QUE MORAM NO ESTADO DE SÃO PAULO 
+VOCÊ TERÁ QUE PASSAR A QUERY PARA GERAR O RELATORIO PARA
+O PROGRAMADOR */
+
+
+SELECT C.NOME, C.EMAIL, T.NUMERO AS CELULAR
+FROM CLIENTE C
+INNER JOIN ENDERECO E
+ON C.IDCLIENTE = E.ID_CLIENTE
+INNER JOIN TELEFONE T
+ON C.IDCLIENTE = T.ID_CLIENTE
+WHERE SEXO = 'F'
+AND ESTADO = 'SP';
+
++---------+-------------------+-----------+
+| NOME    | EMAIL             | CELULAR   |
++---------+-------------------+-----------+
+| ANA     | ANA@GMAIL.COM     | 885746658 |
+| ANA     | ANA@GMAIL.COM     | 558796643 |
+| ELAINE  | ELAINE@GLOBO.COM  | 88679978  |
+| ADRIANA | ADRIANA@GMAIL.COM | 89955665  |
++---------+-------------------+-----------+
+
+/* nome, email, numero, estado */
+
+SELECT C.NOME, C.EMAIL, E.ESTADO, T.NUMERO
+FROM CLIENTE C
+INNER JOIN ENDERECO E
+ON C.IDCLIENTE = E.ID_CLIENTE
+INNER JOIN TELEFONE T
+ON C.IDCLIENTE = T.ID_CLIENTE;
+
++---------+-------------------+--------+-----------+
+| NOME    | EMAIL             | ESTADO | NUMERO    |
++---------+-------------------+--------+-----------+
+| CELIA   | CELIA@GMAIL.COM   | ES     | 659847125 |
+| CELIA   | CELIA@GMAIL.COM   | ES     | 84776523  |
+| JOAO    | JOAO@GMAIL.COM    | RJ     | 554781238 |
+| CARLOS  | CARLOS@GMAIL.COM  | RJ     | 95784623  |
+| JOAO    | JOAO@GMAIL.COM    | RJ     | 33568897  |
+| ANA     | ANA@GMAIL.COM     | SP     | 885746658 |
+| ANA     | ANA@GMAIL.COM     | SP     | 558796643 |
+| JOAO    | JOAO@GMAIL.COM    | RJ     | 86547451  |
+| CELIA   | CELIA@GMAIL.COM   | ES     | 78451236  |
+| CARLOS  | CARLOS@GMAIL.COM  | RJ     | 897456823 |
+| GIOVANA | NULL              | MG     | 68976565  |
+| GIOVANA | NULL              | MG     | 99656675  |
+| DANIELE | DANIELE@GMAIL.COM | RJ     | 33567765  |
+| DANIELE | DANIELE@GMAIL.COM | RJ     | 88668786  |
+| DANIELE | DANIELE@GMAIL.COM | RJ     | 55689654  |
+| LORENA  | NULL              | RJ     | 88687979  |
+| EDUARDO | NULL              | ES     | 88965676  |
+| ANTONIO | ANTONIO@UOL.COM   | PR     | 89966809  |
+| ELAINE  | ELAINE@GLOBO.COM  | SP     | 88679978  |
+| CARMEM  | CARMEM@IG.COM     | PR     | 99655768  |
+| ADRIANA | ADRIANA@GMAIL.COM | SP     | 89955665  |
+| JOICE   | JOICE@GMAIL.COM   | RJ     | 77455786  |
+| JOICE   | JOICE@GMAIL.COM   | RJ     | 89766554  |
+| ANDRE   | ANDRE@GLOBO.COM   | RJ     | 77755785  |
+| ANDRE   | ANDRE@GLOBO.COM   | RJ     | 44522578  |
++---------+-------------------+--------+-----------+
