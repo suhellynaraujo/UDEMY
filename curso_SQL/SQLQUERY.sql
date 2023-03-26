@@ -3689,3 +3689,101 @@ Uptime:                 1 day 23 hours 32 min 45 sec
 
 Threads: 1  Questions: 161  Slow queries: 0  Opens: 113  Flush tables: 1  Open tables: 105  Queries per second avg: 0.000
 --------------
+
+/* STORED PROCEDURES BLOCO NOMEADO, SEMPARAMETROS */
+
+DELIMITER $
+
+STATUS
+
+CREATE PROCEDURE NOME()
+BEGIN
+
+/* PODE SER QUALQUER QUERY DE ACORDO COM O DELIMITADOR($, ;...) : INSERT, UPDATE, DELETE... */
+
+
+
+END 
+$
+
+DELIMITER $
+
+STATUS
+
+CREATE DATABASE EMPRESA$
+
+USE EMPRESA$
+
+CREATE PROCEDURE NOME_EMPRESA()
+BEGIN
+
+SELECT 'UNIVERSIDADE DOS DADOS' AS EMPRESA;
+
+END 
+$
+
+/* CHAMANDO UMA PROCEDURE */
+
+CALL NOME_EMPRESA$
+
++------------------------+
+| EMPRESA                |
++------------------------+
+| UNIVERSIDADE DOS DADOS |
++------------------------+
+
+DELIMITER ;
+
+STATUS
+
+CALL NOME_EMPRESA;
+
+/* PROCEDURE COM PARAMETROS */
+
+DELIMITER $
+
+STATUS
+
+CREATE PROCEDURE CONTA()
+BEGIN
+
+SELECT 10 + 10 AS CONTA;
+
+END 
+$
+
+CALL CONTA()$
++-------+
+| CONTA |
++-------+
+|    20 |
++-------+
+
+DROP PROCEDURE CONTA$
+
+DELIMITER ;
+
+STATUS
+
+DELIMITER $
+
+CREATE PROCEDURE CONTA(NUMERO1 INT, NUMERO2 INT )
+BEGIN
+
+SELECT NUMERO1 + NUMERO2 AS CONTA;
+
+END 
+$
+
+
+CALL CONTA(100, 50)$
+
++-------+
+| CONTA |
++-------+
+|   150 |
++-------+
+
+DELIMITER ;
+
+STATUS
