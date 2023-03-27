@@ -2408,6 +2408,8 @@ FIRST;
 
 /* EXERCICIOS DML */
 
+USE COMERCIO;
+
 INSERT INTO CLIENTE VALUES(NULL,'FLAVIO','M','FLAVIO@IG.COM','4657765');
 INSERT INTO CLIENTE VALUES(NULL,'ANDRE','M','ANDRE@GLOBO.COM','7687567');
 INSERT INTO CLIENTE VALUES(NULL,'GIOVANA','F',NULL,'0876655');
@@ -4101,3 +4103,26 @@ WHERE VALOR < (SELECT AVG(VALOR) FROM CURSOS );
 | ORACLE                        |    40 | 2000.00 |
 | JAVA POO                      |    30 | 1000.00 |
 +-------------------------------+-------+---------+
+
+
+SELECT NOME,
+	   HORAS,
+	   VALOR,
+	   (VALOR*HORAS) AS "TOTAL",
+	   ((VALOR/HORAS)) AS "MEDIA"
+	   FROM CURSOS;
+
++-------------------------------+-------+---------+-----------+------------+
+| NOME                          | HORAS | VALOR   | TOTAL     | MEDIA      |
++-------------------------------+-------+---------+-----------+------------+
+| FUNDAMENTOS DE BANCO DE DADOS |    50 |  700.00 |  35000.00 |  14.000000 |
+| JAVA                          |    40 |  500.00 |  20000.00 |  12.500000 |
+| SQL SERVER                    |    35 | 3000.00 | 105000.00 |  85.714286 |
+| ORACLE                        |    40 | 2000.00 |  80000.00 |  50.000000 |
+| JAVA POO                      |    30 | 1000.00 |  30000.00 |  33.333333 |
+| PYTHON                        |    50 | 3500.00 | 175000.00 |  70.000000 |
+| HTML, CSS, JAVASCRIPT         |    80 | 6000.00 | 480000.00 |  75.000000 |
+| DEVOPS                        |    60 | 4000.00 | 240000.00 |  66.666667 |
+| REACT                         |    35 | 3000.00 | 105000.00 |  85.714286 |
+| ANGULAR                       |    40 | 4500.00 | 180000.00 | 112.500000 |
++-------------------------------+-------+---------+-----------+------------+
