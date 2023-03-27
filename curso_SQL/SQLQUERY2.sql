@@ -11,19 +11,11 @@ Armazenar os telefones dos  clientes, que não são obrigatórios.
 
 
 */
-use projeto;
 
-show tables;
-+-------------------+
-| Tables_in_projeto |
-+-------------------+
-| cliente           |
-| livros            |
-+-------------------+
+CREATE DATABASE OFICINA;
 
-
-CREATE TABLE OFICINA(
-
+CREATE TABLE CLIENTE(
+    IDCLIENTE INT PRIMARY KEY AUTO_INCREMENT,
 
 
 );
