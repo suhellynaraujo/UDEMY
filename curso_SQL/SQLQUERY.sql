@@ -3902,3 +3902,64 @@ SELECT * FROM CURSOS;
 +---------+-------------------------------+-------+---------+
 
 
+/* MAX - TRAZ O VALOR MÁXIMO DE UMA COLUNA */
+
+SELECT MAX(VALOR) AS MAIOR_VALOR
+FROM CURSOS;
+
++-------------+
+| MAIOR_VALOR |
++-------------+
+|     6000.00 |
++-------------+
+
+/* MIN - TRAZ O VALOR MÍNIMO DE UMA COLUNA */
+
+SELECT MIN(VALOR) AS MENOR_VALOR
+FROM CURSOS;
+
++-------------+
+| MENOR_VALOR |
++-------------+
+|      500.00 |
++-------------+
+
+/* AVG - TRAZ O VALOR MÉDIO DE UMA COLUNA, CONTA AS COLUNAS, SOMA OS VALORES E DEPOIS DIVIDE */
+
+SELECT AVG(VALOR) AS MEDIA_VALOR
+FROM CURSOS;
+
++-------------+
+| MEDIA_VALOR |
++-------------+
+| 2820.000000 |
++-------------+
+
+/* PODENDO SER FEITO EM VÁRIAS FUNÇOES */
+
+SELECT MAX(VALOR) AS MAIOR_VALOR,
+	   MIN(VALOR) AS MENOR_VALOR,
+	   AVG(VALOR) AS MEDIA_VALOR
+FROM CURSOS;
+
++-------------+-------------+-------------+
+| MAIOR_VALOR | MENOR_VALOR | MEDIA_VALOR |
++-------------+-------------+-------------+
+|     6000.00 |      500.00 | 2820.000000 |
++-------------+-------------+-------------+
+
+/*TRUNCATE, SERVE PARA QUEBRAR AS CASAS DECIMAIS*/
+
+SELECT MAX(VALOR) AS MAIOR_VALOR,
+	   MIN(VALOR) AS MENOR_VALOR,
+	   TRUNCATE (AVG(VALOR), 2) AS MEDIA_VALOR
+FROM CURSOS;
+
++-------------+-------------+-------------+
+| MAIOR_VALOR | MENOR_VALOR | MEDIA_VALOR |
++-------------+-------------+-------------+
+|     6000.00 |      500.00 |     2820.00 |
++-------------+-------------+-------------+
+
+
+
