@@ -14,17 +14,20 @@ public class Program_Product {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		Product produto = new Product();
 		
 		System.out.println("Enter product data: ");
 		System.out.print("Name: ");
-		produto.name = sc.nextLine();
+		String name = sc.nextLine();
 		
 		System.out.print("Price: ");
-		produto.price = sc.nextDouble();
+		double price = sc.nextDouble();
+		Product produto = new Product(name, price);
 		
-		System.out.print("Quantity in stock: ");
-		produto.quantity = sc.nextInt();
+		produto.setName("computer");
+		System.out.println("Updated name: " + produto.getName());
+		
+		/*System.out.print("Quantity in stock: ");
+		produto.quantity = sc.nextInt();*/
 		
 		System.out.println();
 		System.out.println("Product data: " + produto);

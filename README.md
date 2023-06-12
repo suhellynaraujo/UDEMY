@@ -134,18 +134,22 @@ Gerenciaodres
 
 - São conhecidos como membros de classes
 - public static final = não pode mudar (uma constante), (para declarar nomes inal, sempre ser com letras maiusculas)
-- padrão de nomeclatura para consatantes = tudo maiusculas com um _ para separar as palavras, exemplo: NET_SALARY.
+- padrão de nomeclatura para constantes = tudo maiusculas com um _ para separar as palavras, exemplo: NET_SALARY.
 - Ao ser declarado, um método statico (ou uma constante), não precisa de um objeto para ser chamado em outra classe, sendo assim apenas chamamos a propria classe.método desejado, passando os parametros.
 
-<<<<<<< HEAD
 8 _ SobreCarga
 
 - É um recuso que uma classe possui de oferecer mais de uma operação (construtor) com o mesmo nome, porém com diferentes listas de parametros 
 
+9 _ Encapsulamento
+
+- Esconde detalhes de implementação de uma classe.
+- Expor somente operações seguros
+- garabtir e mater que os objetos estejam em um estado consistente, não podendo ter dados inválidos
+- Objeto não deve expor nenhum atributo(private)
+- Atributos acessados somente por métodos get e set
 
 
-=======
->>>>>>> bd1db4fe86877917c37f5a499cd224cd75fc1936
 
 
 
