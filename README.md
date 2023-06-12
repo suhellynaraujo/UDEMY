@@ -137,12 +137,15 @@ Gerenciaodres
 - padrão de nomeclatura para consatantes = tudo maiusculas com um _ para separar as palavras, exemplo: NET_SALARY.
 - Ao ser declarado, um método statico (ou uma constante), não precisa de um objeto para ser chamado em outra classe, sendo assim apenas chamamos a propria classe.método desejado, passando os parametros.
 
+<<<<<<< HEAD
 8 _ SobreCarga
 
 - É um recuso que uma classe possui de oferecer mais de uma operação (construtor) com o mesmo nome, porém com diferentes listas de parametros 
 
 
 
+=======
+>>>>>>> bd1db4fe86877917c37f5a499cd224cd75fc1936
 
 
 
