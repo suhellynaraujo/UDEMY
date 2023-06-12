@@ -149,6 +149,12 @@ Gerenciaodres
 - Objeto não deve expor nenhum atributo(private)
 - Atributos acessados somente por métodos get e set
 
+10 _ Modificadores de Acesso
+
+- Private = só pde ser acessado na própria classe
+- Não especificar o modificador = só pde ser acessado na classe do mesmo pacote
+- Protected = só pode ser acessado no mesmo pacote, bem como subclasses de pacotes diferentes (extends = herança)
+- Public = acessado por todas as classes, ao menos que ele esteja em um módulo diferente que não exporte o pacote onde ele está
 
 
 
