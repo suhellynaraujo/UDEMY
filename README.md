@@ -185,6 +185,18 @@ Quando declaramos um objeto, ele é guardado(alocado) em um local de memória ch
 - char caracter código unicode 0
 - objeto: null
 
+12 _ Desalocação de Memória - garbage collector e escopo local
+
+12.1 _ Deslocação garbage collector 
+
+- Processo que automatiza o gerenciamento de memória de um progama em execução , monitorando os objetos alocados dinamicamente(tempo de execução) pelo programa (no heap), deslocando aqueles que não estão mais sendo utilizados
+
+12.1 _Deslocação por escopo local
+
+- Variáveis estáticamente declaradas
+- Variáveis locais são desalocadas imediatamente assim que seu escopo local sai de execução
+
+
 
 
 
