@@ -6,40 +6,57 @@ import java.util.Scanner;
 import entities.Conta;
 
 public class Program_Conta {
+
 	public static void main(String[] args) {
+
+		   // configurar o separador com casas decimais com o ponto
+		   Locale.setDefault(Locale.US);
 		
-		Locale.setDefault(Locale.US);
-		
-		Scanner scan = new Scanner(System.in);
-		
-		Conta conta = new Conta();
-		
-		String deposito = "n";
-		String y = "";
-		
-				
-		System.out.print("Enter account number: " );
-		conta.numeroConta = scan.nextInt();
-		System.out.print("Enter account holder: " );
-		conta.nomeTitular = scan.next();
-		System.out.print("Is There na initial deposit (y/n)? " );
-		deposito = scan.next();
-		if(deposito == y){
-			System.out.print("Enter initial deposit value:");			
-			conta.deposito = scan.nextDouble();
+		   // recebe os dados doo usu�rio
+			Scanner scan = new Scanner(System.in);
 			
-			System.out.print(conta.getSaldo());
-		}else {
-			System.out.print(conta.getSaldo());
+			Conta conta;
+			
+			System.out.print("Enter account number: ");
+			int numeroConta = scan.nextInt();					
+			
+			System.out.print("Enter account holder: ");
+			scan.nextLine();
+			String nomeTitular = scan.nextLine();			
+			
+			System.out.print("Is There na initial deposit (y/n)? ");
+			//  scan.next().charAt(0) ler os caracter
+			char resposta = scan.next().charAt(0);
+			
+			if(resposta == 'y') {
+				System.out.print("Enter initial deposit value: " );	
+				double depositoInicial  = scan.nextDouble();
+				//sobre carga
+				conta = new Conta(nomeTitular, numeroConta, depositoInicial);
+			} else {
+				//sobre carga
+				conta = new Conta(numeroConta, nomeTitular);
+			}
+			
+			System.out.println();
+			System.out.print("Account data: " );
+			System.out.println(conta);
+			
+			System.out.println();
+			System.out.print("Enter a deposit value: ");
+			double valorDeposito = scan.nextDouble();			
+			conta.deposito(valorDeposito);			
+			System.out.print("Update account data: ");
+			System.out.println(conta);
+			
+			System.out.println();
+			System.out.print("Enter a withdraw value: ");
+			double retiradaValor = scan.nextDouble();		
+			conta.retirada(retiradaValor);
+			System.out.print("Update account data: ");
+			System.out.println(conta);
+			
+			scan.close();
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-	}
 
 }
