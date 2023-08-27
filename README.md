@@ -196,6 +196,20 @@ Quando declaramos um objeto, ele é guardado(alocado) em um local de memória ch
 - Variáveis estáticamente declaradas
 - Variáveis locais são desalocadas imediatamente assim que seu escopo local sai de execução
 
+13 _ Vetores
+
+- Arranjos unidimencionais
+
+13.1 _ Arrays(Arranjos)
+
+- Estrtura de dados :
+
+- Homogenia = mesmo tipo
+- Ordenados = acessados por meio de posições
+- Alocada de uma vez só em um bloco contíguo de memória
+
+Vantagens : acesso imediato aos elementos de sua posição
+Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 
 
 
