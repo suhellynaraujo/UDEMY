@@ -156,9 +156,34 @@ Gerenciaodres
 - Protected = só pode ser acessado no mesmo pacote, bem como subclasses de pacotes diferentes (extends = herança)
 - Public = acessado por todas as classes, ao menos que ele esteja em um módulo diferente que não exporte o pacote onde ele está
 
+11 _ Tipos referência vs tipos valor
 
+*** STACK é uma area de memória que guarda as variáveis declarada em cada classe
+Quando declaramos um objeto, ele é guardado(alocado) em um local de memória chamado HEAP em tempo de execução , isso é chamdado de alocação dinâmica de memória . ***
 
+11.1 _ Classes
 
+- Em java as classes são tipos referencias
+- Variáveis do tipo classes são referencias ou tentáculos ou ponteiros, pois dentro dela vai ter uma referencia , um  endereço que vai dizer/apontar onde está o objeto 
+
+11.2 _ Valor null
+
+- Tipos referncias(classes) aceitam valores "null", que indica que a variável aponta para ninguém, inicialmnete.
+- Tipos valor(tipos primitivos) não aceitam valores "null", necessita ser declarada inicialmente
+
+11.3 _ Tipos primitivos
+
+- Em java os tipos primitivos são tipos valor, caixas
+- As variavés serão caixas alocadas na área de memória STACK, dentro será guardado o tipo exemplo booçean, char, byte, short, long, float, double, int
+
+11.4 _ Valores padrão
+
+- Quando alocamos(new) qualquer tipo estruturado(classe ou arry), são atribuiidos valores padrão aos apontamentos
+- Quando instanciamos um objeto por pardrão será inicializado com:
+- numero: 0
+- boolean: false
+- char caracter código unicode 0
+- objeto: null
 
 
 
