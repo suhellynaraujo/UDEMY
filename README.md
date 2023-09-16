@@ -213,11 +213,13 @@ Quando declaramos um objeto, ele é guardado(alocado) em um local de memória ch
 Vantagens : acesso imediato aos elementos de sua posição
 Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 
-📝 14 _ Boxing (encaixotamennto)
+📝 14 _ Boxing (encaixotamento)
 
 - É o processo de conversão de um objeto tipo valor para um objeto tipo referencia compatível
 
+📝 15 _ Unboxing
 
+- É o processo de conversão de um objeto tipo referencia para um objeto tipo valor compatível
 
 		
 
