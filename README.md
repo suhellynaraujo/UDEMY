@@ -221,6 +221,11 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 
 - É o processo de conversão de um objeto tipo referencia para um objeto tipo valor compatível
 
-		
+📝 16 _ Wrapper Classes
+
+- São classes com o objetivo de fazer o tratamento dos tipos primitivos como classes de forma transparente ao compilador sem a necessidade de utilização de casting
+- São classes equivalente aos tipos primitivos(de vez com letras minusculas usar com letras maiusculas), sendo assim passam a ser uma classe e não apenas tipos primitivos
+- Para serem feitos boxing e unboxing de forma natural no java		
+- Aceita valor null
 
 
