@@ -228,4 +228,10 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 - Para serem feitos boxing e unboxing de forma natural no java		
 - Aceita valor null
 
+📝 17 _ For each
 
+- Sintaxe simplificada para percorrer coleções
+ for(tipo apelido : coleção){
+    <comando 1>
+    <comando 2>
+ }
