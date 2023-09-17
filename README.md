@@ -235,3 +235,24 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
     <comando 1>
     <comando 2>
  }
+
+📝 18 _ Listas
+
+- Estrutuda de dados 
+    Homogênia
+    Ordenadaa
+    Inicia vazia
+    Cada elemento ocupa um nó
+
+- Tipo interface (List)
+- Classes que implementam a interface List, ArrayList, LinkedList ...
+
+📝 18.1 Demostração
+
+- size() => Tamanho da lista
+- add() => insere elementos a lista
+- remove() => remove elementos da lista
+- removeIf( x -> x.charAt(0) == 'M') => remove todo String(tipo) "nome do objeto" tal que "nome do objeto".(tipo primitivo) seja igual a ...
+- index0f(), lastInndexOf() => encontra posição de elementos
+- List<Integer> result = list.stream().filter(x -> x > 4).collect(Collectors.toList()); => Filtrar lista com base em predicado
+- Integer result = list.stream().filter(x -> x > 4).findFirst().orElse(null); => encontra primeira ocorrencia com base em predicado
