@@ -1,6 +1,6 @@
 package application;
 
-public class Progam_Matriz2 {
+public class Program_Matriz2 {
 
 	public static void main(String[] args) {
 		/*
