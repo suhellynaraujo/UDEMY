@@ -256,3 +256,8 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 - index0f(), lastInndexOf() => encontra posição de elementos
 - List<Integer> result = list.stream().filter(x -> x > 4).collect(Collectors.toList()); => Filtrar lista com base em predicado
 - Integer result = list.stream().filter(x -> x > 4).findFirst().orElse(null); => encontra primeira ocorrencia com base em predicado
+
+📝 19 _ Matriz
+ 
+- nome dado a arranjos bidimencionais, vetores de vetores
+- Linhas e colunas
