@@ -261,3 +261,89 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
  
 - nome dado a arranjos bidimencionais, vetores de vetores
 - Linhas e colunas
+
+📝 20 _ Data
+
+- Data-[Hora] local
+
+    - ano-mes-dia-[hora] armazenada sem fuso horário, hora opcional
+    - utilizadas em uso comum em sistemas de região unica, excel
+    - data de nascimento
+    - data-hora de venda
+
+- Data-[Hora] global
+
+    - ano-mes-dia-[hora] armazenada com fuso horário
+    - utilizados em sistemas multi-região, web
+    - Sorteios
+    - Eventos
+
+- Duração
+
+    - tempo decorrido entre duas tadas-horas
+
+- Timezone
+
+    - GMT(GreenWich Mean Time) 
+        - Horário de londres
+        - padrão UTC(Coordinated Universal Time)
+
+    - Fuso horários relativos ao GMT/UTC
+        - São Paulo: GMT-3
+        - Manaus: GMT-4
+        - Portugal: GMT+1
+
+    - Linguagens/Tecnologias usam nomes para identificar Timezones
+        - US/Pacific
+        - America/Sao_Paulo
+        - etc
+
+- Padrão ISO 8601
+
+    - Data-[Hora] local
+        - ano-mes-dia
+            - 2023-09-17
+
+    - Data-[Hora] global
+        - ano-mes-dia
+            - 2023-09-17T21:35:09Z
+
+- Operações com data-hora (Importante saber!!!!)
+
+    - Intanciação
+        - (agora) => Data-Hora
+        - Texto ISO 8601 => Data-Hora
+        - Texto formatado customizado => Data-Hora
+        - dia, mes, ano, [horario, opcional] => Data-Hora local
+
+    - Formatação
+        - Texto ISO 8601 => Data-Hora
+        - Texto formatado customizado => Data-Hora
+
+    - Obter dados de uma data-hora local
+        - Data-Hora local => dia, mes, ano, horario
+
+    - Converter data-hora global para local
+        - Data-Hora global, Timezone(sistema local) => Data-Hora local
+    
+    - Calculos com data-hora
+        - Data-Hora +/- tempo => Data-Hora
+        - Data-Hora 1, Data-Hora 2 => Duração
+
+- Principais Tipos 
+
+    - Data-Hora local
+         - LocalDate
+         - Local Time
+
+    - Data-Hora global
+        - Instant
+    
+    - Duração
+        - Duration
+    
+    - Zoneld
+
+    - ChronoUnit
+
+
