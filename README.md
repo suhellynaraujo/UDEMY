@@ -351,4 +351,10 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 - Tipo especial que serve para especiificaa de forma literal um conjunto de constantes relacionadas
 - melhor semantica, código mais legivele auxiliado pelo compiilador
 
+📝 22 _  Categorias de classes
 
+- Entities
+- Views
+- Controllers
+- Servvices
+- Repositories
