@@ -346,4 +346,9 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 
     - ChronoUnit
 
+📝 21 _ Enumeração => enum
+
+- Tipo especial que serve para especiificaa de forma literal um conjunto de constantes relacionadas
+- melhor semantica, código mais legivele auxiliado pelo compiilador
+
 
