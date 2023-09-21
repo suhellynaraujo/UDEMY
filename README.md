@@ -406,3 +406,8 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 - palavra instanceof
 - uso comum:
     - métodos que recebem parametros genéricos(ex: Equals)
+
+📝 25 _ Sobreposição ou sobrescrita
+
+- Implementação de um metodo de uma superclasse na subclasse
+- Recomendado usar a anotação @Override em um metodo subresccrito
