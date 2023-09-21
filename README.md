@@ -361,7 +361,7 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 
 📝 23 _ Composição
 
-- Tipo de associação que permiite que um objeto cotenha outro
+- Tipo de associação que permite que um objeto cotenha outro
 - Relaçõ "tem-um" ou "tem-outro"
 - Organização
 - Coesão
@@ -369,4 +369,23 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 - Reuso
 - Simbolo
     - Dimante preto
-    
+
+📝 24 _ Herança
+
+- Tipo de associação que permite que uma classe herde todos os dados e comportamentos de outra (e não entre objetos) 
+- Relação "é-um"
+- Generalização/especialização
+- Reuso de atributos e metodos
+- Polimorfismo
+- Sintaxe
+    -   Classe A extends B
+- Simbolo
+    - Seta com a ponta branca
+- SuperClasse => classe base(mãe)
+- SubClasse => classe derivada(filhos)
+- Modificador de acesso protected
+    - Acessivel
+        - Pode ser acessado na propria classe
+        - Em uma classe do mesmo pacote
+        - Em uma subclasse de outro 
+    - Inacessivel
