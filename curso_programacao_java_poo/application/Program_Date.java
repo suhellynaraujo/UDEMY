@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalUnit;
 
 public class Program_Date {
 
@@ -16,7 +15,7 @@ public class Program_Date {
 		// site Oracle
 		// https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/format/DateTimeFormatter.html
 
-		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+		//DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 		// DateTimeFormatter frmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 		System.out.println("\n-------------data local----------------\n");
@@ -105,10 +104,10 @@ public class Program_Date {
 		System.out.println("\n--Converter data-hora gobal para local--\n");
 		// Converter data-hora gobal para local usando ZoneId.systemDefault()
 
-		for (String string : ZoneId.getAvailableZoneIds()) {
+	/*	for (String string : ZoneId.getAvailableZoneIds()) {
 			// nomes para fuso horário
 			// System.out.println(string);
-		}
+		}*/
 
 		Instant data15 = Instant.parse("2023-09-19T15:46:35z");
 		LocalDate resultado1 = LocalDate.ofInstant(data15, ZoneId.systemDefault());

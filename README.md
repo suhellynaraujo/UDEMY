@@ -358,3 +358,15 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 - Controllers
 - Servvices
 - Repositories
+
+📝 23 _ Composição
+
+- Tipo de associação que permiite que um objeto cotenha outro
+- Relaçõ "tem-um" ou "tem-outro"
+- Organização
+- Coesão
+- Flexibilidade
+- Reuso
+- Simbolo
+    - Dimante preto
+    

@@ -20,6 +20,8 @@ public class Program_enum {
 		
 		System.out.println(status);
 		System.out.println(status1);
+		
+		
 	}
 
 }
