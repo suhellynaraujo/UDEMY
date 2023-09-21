@@ -372,8 +372,9 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 
 📝 24 _ Herança
 
-- Tipo de associação que permite que uma classe herde todos os dados e comportamentos de outra (e não entre objetos) 
+- Tipo de associação que permite que uma classe herde todos os dados e comportamentos de outra classe(e não entre objetos) 
 - Relação "é-um"
+    - Uma subclasse é uma superclasse(por receber metodos e atributos da superclasse)
 - Generalização/especialização
 - Reuso de atributos e metodos
 - Polimorfismo
@@ -389,3 +390,19 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
         - Em uma classe do mesmo pacote
         - Em uma subclasse de outro 
     - Inacessivel
+- (as subclasses herda os atributos e métodos da superclasse mais os próprio atributos e métodos)
+
+📝 24.1 Upcasting
+
+- Casting da subclasse para a superclasse 
+    - pegar um objeto da subclasse e atribuir para uma variavel da superclasse, ou seja uma variavel da superclasse recebe o valor do objeto de uma subclasse
+- uso comum:
+    - polomorfismo
+
+📝 24.2 Downcasting
+
+- Casting da superclasse para a subclasse
+    - converter um objeto da superclasse para a subclasse
+- palavra instanceof
+- uso comum:
+    - métodos que recebem parametros genéricos(ex: Equals)
