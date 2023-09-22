@@ -482,9 +482,12 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
                             - NullPointerException 
                                 - tentar acessar uma variavel com valor nulo
 
-📝 29.1 Try-
+📝 29.1 _ Try-catch
 
 - Bloco Try
     - codigo que representa a execução
 - Bloco Catch
     - codigo a ser executado caso a exceção ocorra
+
+📝 29.2 _ Pilha de chamada de metodos
+- printStackTrace() => tras a pilha de chhamada de exceções
