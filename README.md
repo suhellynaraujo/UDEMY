@@ -481,3 +481,10 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
                                 - tentar acessar uma posição do array que não existe
                             - NullPointerException 
                                 - tentar acessar uma variavel com valor nulo
+
+📝 29.1 Try-
+
+- Bloco Try
+    - codigo que representa a execução
+- Bloco Catch
+    - codigo a ser executado caso a exceção ocorra
