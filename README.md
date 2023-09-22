@@ -511,3 +511,9 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 - Scanner
     - leitor de texto
 - IOException
+
+- FileReader
+    - Stream (sequencia) de leitura de caracteres a partir de arquivos
+- BufferedReader
+    - mais rápido
+
