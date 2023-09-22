@@ -493,8 +493,13 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 
 - printStackTrace() => tras a pilha de chhamada de exceções
 
-📝 29.3 _Finally
+📝 29.3 _ Finally
 
 - Bloco finally
     - codigo a ser executado independentemente de ter ocorrido ou não a exceção
     - fechar um arquivo, connexão com bannco de dados
+
+📝 29.4 _ Clausula throw
+
+- Propaga a excesção ao inves de tratar
+- lança a exceção / Corta o metodo
