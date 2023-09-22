@@ -503,3 +503,11 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 
 - Propaga a excesção ao inves de tratar
 - lança a exceção / Corta o metodo
+
+📝 30 _ Arquivos
+
+- File
+    - representação abstrata de um arquivo e seu caminnho
+- Scanner
+    - leitor de texto
+- IOException
