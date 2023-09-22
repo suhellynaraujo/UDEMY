@@ -40,14 +40,11 @@ public class Program_Exception {
 			checkOut = sdf.parse(scan.next());
 			
 			//tratamento de forma ruim
-			Date now = new Date();
-			if(checkIn.before(now) || checkOut.before(now)) {
-				System.out.println("Error in reservation: Reservation dates for update must be future dates");
-				
-			}else if(!checkOut.after(checkIn)){
-				System.out.println("Error in reservation: Check-out date must be after check-in date");
-			}else {
-				reserva.updateDates(checkIn, checkOut);
+			
+				String erro =reserva.updateDates(checkIn, checkOut);
+				if(erro != null) {
+					System.out.println("Error in Reservation: " + erro);
+				}else {
 				System.out.println("Reservation: " + reserva);
 				
 			}
