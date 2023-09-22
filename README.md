@@ -437,3 +437,19 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 
 - Recurso que permite que váriaveis de um mesmo tipo generico possam apontar para objetos de tipos especificos diferentes tendo assim comportamentos diferentes conforme cada tipo especifico
 - A associação do tipo especifico com o tipo generico é feita em tempo de execução(upcasting)
+
+📝 28 _ Classes abstratas
+
+- Classes que não podem ser instanciadas
+- Forma de garantir herança total
+    - somente subclasses não abstratas podem ser instanciadas, mas nunca a superclasse abstrata
+- Italico
+    - o nome da classe abstract fica em italico
+
+📝 28.1 _ Metodos abstratos
+
+- Não possuem implementação
+- Metodos precisam ser abstratos quando a classe é generica demais para conter sua implementação
+- Se uma classe possuir pelo menos um metodo abstrato então essa classe tbm é abstrata
+- Italico
+    - o nome do metodo abstract fica em italico
