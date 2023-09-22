@@ -411,3 +411,7 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 
 - Implementação de um metodo de uma superclasse na subclasse
 - Recomendado usar a anotação @Override em um metodo subresccrito
+
+📝 26 _ Super
+
+- Chamar a implemenntaçãoda superclasse utilizando o super();
