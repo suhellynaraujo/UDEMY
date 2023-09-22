@@ -1,14 +1,14 @@
 package entities;
 
-public class SavevingsAccount extends Account{
+public class SavingsAccount extends Account{
 
 	private Double interestRate;
 
-	public SavevingsAccount() {
+	public SavingsAccount() {
 		super();
 	}
 
-	public SavevingsAccount(Integer number, String holder, Double balance, Double interestRate) {
+	public SavingsAccount(Integer number, String holder, Double balance, Double interestRate) {
 		super(number, holder, balance);
 		this.interestRate = interestRate;
 	}

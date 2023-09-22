@@ -415,3 +415,14 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 📝 26 _ Super
 
 - Chamar a implemenntaçãoda superclasse utilizando o super();
+
+📝 27 _ Final
+
+- Classe
+    - Evita que a classe seja herdada por ooutras classes, ou seja que tenha subclasses
+- Metodo
+    - Evita que o metodo seja sobreposto
+- Segurança
+    - dependendo da regra de negócio as vezes é desejavel garantir que uma classe nnnão seja herdada ou que um metodo nao seja sobreposto
+- Performace
+     - Atributos de tipo de uma classe final são analisados de forma mais rapida em tempo de execução

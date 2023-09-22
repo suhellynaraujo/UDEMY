@@ -2,7 +2,7 @@ package application;
 
 import entities.Account;
 import entities.BussinessAccount;
-import entities.SavevingsAccount;
+import entities.SavingsAccount;
 
 public class Program_Account {
 
@@ -15,7 +15,7 @@ public class Program_Account {
 		//Upcasting pegar um objeto da subclasse e atribuir para uma variavel da superclasse, ou seja uma variavel recebe o valor do objeto
 		Account acc1 = bacc;
 		Account acc2 = new BussinessAccount(1004, "João", 0.0, 200.0);
-		Account acc3 = new SavevingsAccount(1005, "Luiz", 0.0, 0.01);
+		Account acc3 = new SavingsAccount(1005, "Luiz", 0.0, 0.01);
 		
 		//Downcasting converter um objeto da superclasse para a subclasse,
 		//fazer o casting manual da subclasse	
@@ -36,8 +36,8 @@ public class Program_Account {
 			System.out.println("Loan");
 		}
 		
-		if(acc3 instanceof SavevingsAccount) {
-			SavevingsAccount acc5 = (SavevingsAccount)acc3;
+		if(acc3 instanceof SavingsAccount) {
+			SavingsAccount acc5 = (SavingsAccount)acc3;
 			acc5.updateBalance();
 			System.out.println("Update");
 			
