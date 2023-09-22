@@ -490,4 +490,11 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
     - codigo a ser executado caso a exceção ocorra
 
 📝 29.2 _ Pilha de chamada de metodos
+
 - printStackTrace() => tras a pilha de chhamada de exceções
+
+📝 29.3 _Finally
+
+- Bloco finally
+    - codigo a ser executado independentemente de ter ocorrido ou não a exceção
+    - fechar um arquivo, connexão com bannco de dados
