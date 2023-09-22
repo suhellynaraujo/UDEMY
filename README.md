@@ -453,3 +453,31 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 - Se uma classe possuir pelo menos um metodo abstrato então essa classe tbm é abstrata
 - Italico
     - o nome do metodo abstract fica em italico
+
+📝 29 _ Tratamento de exceções
+
+- É uma condição de erro ou erro inesperado
+- Em java uma exceção é um objeto herdado da classe
+    - java.lang.Exception => o compilador obriga a tratar
+    - java.lang.RuntimeException => o compilador não obriga a tratar
+- Pilha
+    - ordem de chamada de exceções
+- Hierarquia de exceções do java
+    - Throwable 
+        - superclasse generica de todos erros e exceções
+            - Error 
+                - erros que não se espera que o programaador vá tratar 
+                    - OutofMemoryError
+                        - estouro de memória
+                    - VirtualMachineError
+                        - erro na maquina virtual java
+            - Excepption 
+                - erros que se espera/possibilidade que o programa vá tratar 
+                    - IOException 
+                        - erro de entrada e saida
+                    - RunTimeException
+                        - exceções que não nnecessariamente o programa vai ter tratar
+                            - IndexOutOfBoundsExceptions
+                                - tentar acessar uma posição do array que não existe
+                            - NullPointerException 
+                                - tentar acessar uma variavel com valor nulo
