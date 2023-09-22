@@ -407,16 +407,16 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 - uso comum:
     - métodos que recebem parametros genéricos(ex: Equals)
 
-📝 25 _ Sobreposição ou sobrescrita
+📝 24.3 _ Sobreposição ou sobrescrita
 
 - Implementação de um metodo de uma superclasse na subclasse
 - Recomendado usar a anotação @Override em um metodo subresccrito
 
-📝 26 _ Super
+📝 24.4 _ Super
 
 - Chamar a implemenntaçãoda superclasse utilizando o super();
 
-📝 27 _ Final
+📝 25 _ Final
 
 - Classe
     - Evita que a classe seja herdada por ooutras classes, ou seja que tenha subclasses
@@ -426,3 +426,14 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
     - dependendo da regra de negócio as vezes é desejavel garantir que uma classe nnnão seja herdada ou que um metodo nao seja sobreposto
 - Performace
      - Atributos de tipo de uma classe final são analisados de forma mais rapida em tempo de execução
+
+📝 26 _ Pailares de POO
+
+- Encapsolamneto
+- Herança
+- Polimorfismo
+
+📝 27 _ Polimorfismo(muitas formas)
+
+- Recurso que permite que váriaveis de um mesmo tipo generico possam apontar para objetos de tipos especificos diferentes tendo assim comportamentos diferentes conforme cada tipo especifico
+- A associação do tipo especifico com o tipo generico é feita em tempo de execução(upcasting)
