@@ -517,3 +517,10 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 - BufferedReader
     - mais rápido
 
+📝 30.1 _ Try-with-resources
+
+- Declara um ou mais recursos e garante que esses recursos seão fechados ao final do bloco
+- a chamada é como argumentos(parametros) do try, tirando a nessecidade de utilização do bloco finaly
+
+
+
