@@ -512,9 +512,9 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
     - leitor de texto
 - IOException
 
-- FileReader
+- FileReader(Ler arquivos)
     - Stream (sequencia) de leitura de caracteres a partir de arquivos
-- BufferedReader
+- BufferedReader(Ler arquivos)
     - mais rápido
 
 📝 30.1 _ Try-with-resources
@@ -522,5 +522,12 @@ Desvantagem : tamanho fixo, dificuldade para realizar inserçõoes e deleções
 - Declara um ou mais recursos e garante que esses recursos seão fechados ao final do bloco
 - a chamada é como argumentos(parametros) do try, tirando a nessecidade de utilização do bloco finaly
 
+📝 30.2 _ FileWriter e BufferedWriter
 
+- FileWriter 
+    - stream de escrita de caracteres der arquiuvos
+    - Cria/recria o arquivo : new FileWriter(path)
+    - Acrescebta ao arquivo existente : new FileWriter(path, true)
+- BufferedWriter
+    - Mais rápido
 

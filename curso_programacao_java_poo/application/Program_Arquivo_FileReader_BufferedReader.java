@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Program_Arquivo_File {
+public class Program_Arquivo_FileReader_BufferedReader {
 
 	public static void main(String[] args) {
 
